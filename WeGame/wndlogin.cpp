@@ -70,33 +70,21 @@ void WndLogin::Init()
 }
 
 bool WndLogin::isTrue()
-{    QString thisaccount= ui->eAccount->text();
-     QString thisPass=ui->ePass->text();
+{
+    QString thisaccount= ui->eAccount->text();
+    QString thisPass=ui->ePass->text();
+    Archive archive;
 
-     if(thisPass==nullptr||thisaccount==nullptr){
-         QMessageBox::information(NULL, "登录失败", "用户或密码不能为空！！"); //警告乱码问题
-         return false;
-     }
-
-     QFile file("C:/MyGame/user/" + thisaccount+ "/" +thisaccount + ".txt");
-
-     file.open(QIODevice::ReadOnly);
-
-     QByteArray data=file.readAll();
-     const QString TrulyPass = QString(data);
-     file.close();
-
-     if(thisPass==TrulyPass) return true;
-     else{
-         QMessageBox::information(NULL,"登录失败","用户或密码错误！！"); //警告乱码问题
-         return false;
+    if(!archive.isLogin(thisaccount, thisPass)){
+        QMessageBox::information(NULL, "登录失败", "用户或密码错误或为空！！"); //警告乱码问题
+        return false;
     }
+    return true;
 }
 
 bool WndLogin::isFix(const QString str1, const QString str2)
 {
     //确定两次输入的密码是否相同
-
     if(str1==nullptr&&str2==nullptr)
     {
         QDir UserDir("C:/MyGame/user/"+ui->eAccount_->text());
@@ -104,6 +92,7 @@ bool WndLogin::isFix(const QString str1, const QString str2)
         UserDir.removeRecursively();
 
         QMessageBox::information(NULL,"错误","密码不能为空！！"); //警告乱码问题
+
         return false;
     }
     else if(!(str1==str2)){
@@ -114,7 +103,7 @@ bool WndLogin::isFix(const QString str1, const QString str2)
         ui->ePassword_->setPalette(wrong);
         ui->ePassword_->setPlaceholderText(QString("密码输入有误！"));
 
-        QDir UserDir("C:/MyGame/user/"+ui->eAccount_->text());
+        QDir UserDir("C:/MyGame/user/" + ui->eAccount_->text());
         //创建文件夹
         UserDir.removeRecursively();
         return  false;
@@ -127,7 +116,6 @@ bool WndLogin::isFix(const QString str1, const QString str2)
     ui->ePassword_->setPlaceholderText(QString("确认密码："));
     return  true;
 }
-
 
 void WndLogin::on_btnReg_clicked()
 {
@@ -209,7 +197,7 @@ bool WndLogin::isTre()
        ui->ePassword->clear();
        ui->ePassword_->clear();
        ui->eUers->clear();
-       QDir UserDir("C:/MyGame/user/"+ui->eAccount_->text());
+       QDir UserDir("C:/MyGame/user/" + ui->eAccount_->text());
 
        UserDir.removeRecursively();
 
@@ -222,14 +210,9 @@ bool WndLogin::isTre()
 
 void WndLogin::on_btnLogin_clicked()
 {
-    if(isTrue()&&ui->eAccount&&ui->ePassword)
+    if(isTrue() && ui->eAccount && ui->ePassword)
     {
-        WndMain *a=new WndMain();
-
-        QFile qss(":/image/wndmain.qss");
-        qss.open(QFile::ReadOnly);
-        qApp->setStyleSheet(qss.readAll());
-        qss.close();
+        WndMain *a = new WndMain();
 
         a->show();
 
