@@ -156,6 +156,29 @@ void Archive::readGameRecords()
     file.close();
 }
 
+bool Archive::isLogin(QString account, QString password)
+{
+    QString thisaccount = account;
+    QString thisPass = password;
+
+    if(thisPass == nullptr || thisaccount == nullptr){
+        return false;
+    }
+
+    QFile file("C:/MyGame/user/" + thisaccount + "/" + thisaccount + ".txt");
+
+    file.open(QIODevice::ReadOnly);
+
+    QByteArray data=file.readAll();
+    const QString TrulyPass = QString(data);
+    file.close();
+
+    if (thisPass==TrulyPass) return true;
+    else{
+        return false;
+    }
+}
+
 QVector<GameTime> Archive::getRecords()
 {
     return _time;

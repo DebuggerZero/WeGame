@@ -8,6 +8,11 @@
 #include <QDir>
 #include <QVector>
 
+struct User {
+    QString userName;
+    QString account;
+};
+
 struct GameTime {
     int number;
     int bestScore;
@@ -47,6 +52,8 @@ public:
     void readGameStorage();
 
     void readGameRecords();
+
+    bool isLogin(QString account, QString password);
 
     QVector<struct GameTime> getRecords();
 
