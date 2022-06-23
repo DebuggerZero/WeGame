@@ -106,7 +106,7 @@ WndMain::WndMain(QWidget *parent)
     m_rightClieckMenu = new QMenu(this);
     //设置菜单样式
 
-/**************************************/
+    /**************************************/
     //创建菜单项
     m_openAction = new QAction("打开",this);
     View_achievements = new QAction("查看成就",this);
