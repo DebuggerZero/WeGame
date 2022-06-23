@@ -16,56 +16,16 @@ WndMain::WndMain(QWidget *parent)
     this->setStyleSheet(Utility::getStyleSheet(":/image/wndmain.qss"));
 
     //2048游戏按钮
-    connect(ui->TZFE, &QPushButton::clicked, this, [=](){
-        if (!_isOpen) {
-            GameStartWindows *gameWidget = new GameStartWindows();
-            connect(gameWidget, &GameStartWindows::windowsClose, this, [=](){
-                this->show();
-                _isOpen = false;
-            });
-            gameWidget->show();
-            this->hide();
-        }
-    });
+    connect(ui->TZFE, &QPushButton::clicked, this, &WndMain::openTZFE);
 
     //五子棋游戏按钮
-    connect(ui->Gobang, &QPushButton::clicked, this, [=](){
-        if (!_isOpen) {
-            GStartWindow *gameWidget = new GStartWindow();
-            connect(gameWidget, &GStartWindow::windowsClose, this, [=](){
-                this->show();
-                _isOpen = false;
-            });
-            gameWidget->show();
-            this->hide();
-        }
-    });
+    connect(ui->Gobang, &QPushButton::clicked, this, &WndMain::openGobang);
 
     //贪吃蛇游戏按钮
-    connect(ui->Snake, &QPushButton::clicked, this, [=](){
-        if (!_isOpen) {
-            GStartWidght *gameWidget = new GStartWidght();
-            connect(gameWidget, &GStartWidght::windowsClose, this, [=](){
-                this->show();
-                _isOpen = false;
-            });
-            gameWidget->show();
-            this->hide();
-        }
-    });
+    connect(ui->Snake, &QPushButton::clicked, this, &WndMain::openSnake);
 
     //color游戏按钮
-    connect(ui->color, &QPushButton::clicked, this, [=](){
-        if (!_isOpen) {
-            Widget *gameWidget = new Widget();
-            connect(gameWidget, &Widget::windowsClose, this, [=](){
-                this->show();
-                _isOpen = false;
-            });
-            gameWidget->show();
-            this->hide();
-        }
-    });
+    connect(ui->color, &QPushButton::clicked, this, &WndMain::openColor);
 
     connect(ui->comingsoom, &QPushButton::clicked, this, [=](){
         QMessageBox::about(this, "提示", "新游戏正在开发中，敬请期待...");
@@ -177,12 +137,64 @@ void WndMain::contextMenuEvent(QContextMenuEvent *event)
     }
 }
 
+void WndMain::openTZFE()
+{
+    if (!_isOpen) {
+        GameStartWindows *gameWidget = new GameStartWindows();
+        connect(gameWidget, &GameStartWindows::windowsClose, this, [=](){
+            this->show();
+            _isOpen = false;
+        });
+        gameWidget->show();
+        this->hide();
+    }
+}
+
+void WndMain::openGobang()
+{
+    if (!_isOpen) {
+        GStartWindow *gameWidget = new GStartWindow();
+        connect(gameWidget, &GStartWindow::windowsClose, this, [=](){
+            this->show();
+            _isOpen = false;
+        });
+        gameWidget->show();
+        this->hide();
+    }
+}
+
+void WndMain::openSnake()
+{
+    if (!_isOpen) {
+        GStartWidght *gameWidget = new GStartWidght();
+        connect(gameWidget, &GStartWidght::windowsClose, this, [=](){
+            this->show();
+            _isOpen = false;
+        });
+        gameWidget->show();
+        this->hide();
+    }
+}
+
+void WndMain::openColor()
+{
+    if (!_isOpen) {
+        Widget *gameWidget = new Widget();
+        connect(gameWidget, &Widget::windowsClose, this, [=](){
+            this->show();
+            _isOpen = false;
+        });
+        gameWidget->show();
+        this->hide();
+    }
+}
+
 
 void WndMain::doAction()			//doAction()是一个槽函数
 {
     QAction *action =  qobject_cast<QAction*>(sender());			//获取是由那个按钮发出的信号
     if (action == m_openAction)		//如果点击的是“打开”菜单按钮
         QMessageBox::information(this, "Tips","你点击了打开按钮", QMessageBox::Yes);
-    else if (action==this->View_records) //如果打开的是“关闭”菜单按钮
+    else if (action == this->View_records) //如果打开的是“关闭”菜单按钮
         QMessageBox::information(this, "Tips","你点击了关闭按钮", QMessageBox::Yes);
 }

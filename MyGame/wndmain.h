@@ -31,6 +31,11 @@ public:
     QAction *View_records;
     void doAction();
     void contextMenuEvent(QContextMenuEvent* event);
+
+    void openTZFE();
+    void openGobang();
+    void openSnake();
+    void openColor();
     /********************************/
     ~WndMain();
 
