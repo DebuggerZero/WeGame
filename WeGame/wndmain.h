@@ -4,6 +4,8 @@
 #include <QWidget>
 #include <QFile>
 #include <QStringList>
+#include<QMenu>
+#include<QAction>
 
 #include "game/2048/GameView/gamestartwindows.h"
 #include "game/Gobang/GameView/gstartwindow.h"
@@ -22,6 +24,14 @@ class WndMain : public QWidget
 
 public:
     WndMain(QWidget *parent = nullptr);
+    /****************************/
+    QMenu *m_rightClieckMenu;
+    QAction *m_openAction ;
+    QAction *View_achievements;
+    QAction *View_records;
+    void doAction();
+    void contextMenuEvent(QContextMenuEvent* event);
+    /********************************/
     ~WndMain();
 
 private slots:
