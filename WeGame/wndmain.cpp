@@ -101,6 +101,29 @@ WndMain::WndMain(QWidget *parent)
             ui->listWidget_4->addItems(lists);
         }
     });
+
+
+    m_rightClieckMenu = new QMenu(this);
+    //设置菜单样式
+
+/**************************************/
+    //创建菜单项
+    m_openAction = new QAction("打开",this);
+    View_achievements = new QAction("查看成就",this);
+    View_records = new QAction("查看记录",this);
+
+    //将创建好的菜单项加入到菜单中
+    m_rightClieckMenu->addAction(m_openAction);
+    m_rightClieckMenu->addAction(View_achievements);
+    m_rightClieckMenu->addAction(View_records);
+
+    m_openAction->setIcon(QIcon(":/image/image/gameIcon.png"));
+    View_achievements->setIcon(QIcon(":/image/image/achiIcon.png"));
+    View_records->setIcon(QIcon(":/image/image/histIcon.png"));
+    //关联菜单项按钮和对应的槽函数
+    connect(m_openAction, &QAction::triggered,this, &WndMain::doAction);
+    connect(View_records, &QAction::triggered,this, &WndMain::doAction);
+    connect(View_achievements, &QAction::triggered,this, &WndMain::doAction);
 }
 
 WndMain::~WndMain()
@@ -142,4 +165,24 @@ void WndMain::on_btnDwi_clicked()
 void WndMain::on_btnClose_clicked()
 {
     this->close();
+}
+
+
+void WndMain::contextMenuEvent(QContextMenuEvent *event)
+{
+    if(ui->TZFE->underMouse()||ui->Snake->underMouse()||ui->color->underMouse()||ui->Gobang->underMouse())			//如果鼠标右击的是menuBtn控件，才弹出菜单
+    {
+        //m_rightClieckMenu->exec(QCursor::pos()); 	   //QCursor::pos()获取鼠标右键点击的位置，在此弹出菜单
+        m_rightClieckMenu->exec(event->globalPos());   //	让菜单在鼠标点击的位置弹出
+    }
+}
+
+
+void WndMain::doAction()			//doAction()是一个槽函数
+{
+    QAction *action =  qobject_cast<QAction*>(sender());			//获取是由那个按钮发出的信号
+    if (action == m_openAction)		//如果点击的是“打开”菜单按钮
+        QMessageBox::information(this, "Tips","你点击了打开按钮", QMessageBox::Yes);
+    else if (action==this->View_records) //如果打开的是“关闭”菜单按钮
+        QMessageBox::information(this, "Tips","你点击了关闭按钮", QMessageBox::Yes);
 }
