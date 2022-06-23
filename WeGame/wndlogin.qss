@@ -1,0 +1,175 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+}
+
+QWidget#WndLogin {
+    /* 矩形 1 */
+    position: absolute;
+    width: 797px;
+    height: 442px;
+    top: -260px;
+    left: -536px;
+    background: rgb(161, 90, 102);
+}
+
+QLabel#label {
+    /* logo 1 */
+    position: absolute;
+    width: 255px;
+    height: 184px;
+    top: -260px;
+    left: -536px;
+}
+
+QLabel#label_2 {
+    /* 矩形 2 */
+    position: absolute;
+    width: 542px;
+    height: 442px;
+    top: -260px;
+    left: -281px;
+    background: rgba(65, 71, 103, 0.34);
+    border: 1px solid rgb(0, 0, 0);
+}
+
+QPushButton#btnReg {
+    background: transparent;
+    position: absolute;
+    width: 65px;
+    height: 31px;
+    top: 38px;
+    left: -489px;
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    font-weight: 400;
+}
+
+QPushButton#btnReg:hover {
+    background: transparent;
+    position: absolute;
+    width: 65px;
+    height: 31px;
+    color: rgb(223, 177, 35);
+}
+
+QPushButton#btnLogin {
+    /* 矩形 3 */
+    position: absolute;
+    width: 182px;
+    height: 39px;
+    top: 88px;
+    left: -500px;
+    background: rgba(255, 230, 150, 0.99);
+    border-radius: 20px;
+    /* 登录 */
+    position: absolute;
+    width: 36px;
+    height: 31px;
+    top: 92px;
+    left: -431px;
+    color: rgb(172, 0, 0);
+    font-size: 18px;
+    font-weight: 400;
+}
+
+QPushButton#btnLogin:hover {
+    /* 矩形 3 */
+    position: absolute;
+    width: 182px;
+    height: 39px;
+    top: 88px;
+    left: -500px;
+    background: rgb(175, 119, 128);
+    border-radius: 20px;
+    /* 登录 */
+    position: absolute;
+    width: 36px;
+    height: 31px;
+    top: 92px;
+    left: -431px;
+    color: rgb(250, 216, 0);
+    font-size: 18px;
+    font-weight: 400;
+}
+
+QPushButton#btnReg_ {
+    /* 矩形 3 */
+    position: absolute;
+    width: 182px;
+    height: 39px;
+    top: 88px;
+    left: -500px;
+    background: rgba(255, 230, 150, 0.99);
+    border-radius: 20px;
+    /* 登录 */
+    position: absolute;
+    width: 36px;
+    height: 31px;
+    top: 92px;
+    left: -431px;
+    color: rgb(172, 0, 0);
+    font-size: 18px;
+    font-weight: 400;
+}
+
+QPushButton#btnReg_:hover {
+    /* 矩形 3 */
+    position: absolute;
+    width: 182px;
+    height: 39px;
+    top: 88px;
+    left: -500px;
+    background: rgb(175, 119, 128);
+    border-radius: 20px;
+    /* 登录 */
+    position: absolute;
+    width: 36px;
+    height: 31px;
+    top: 92px;
+    left: -431px;
+    color: rgb(250, 216, 0);
+    font-size: 18px;
+    font-weight: 400;
+}
+
+QPushButton#btnRet {
+    /* 矩形 3 */
+    position: absolute;
+    width: 182px;
+    height: 39px;
+    top: 88px;
+    left: -500px;
+    background: rgba(255, 230, 150, 0.99);
+    border-radius: 20px;
+    /* 登录 */
+    position: absolute;
+    width: 36px;
+    height: 31px;
+    top: 92px;
+    left: -431px;
+    color: rgb(172, 0, 0);
+    font-size: 18px;
+    font-weight: 400;
+}
+
+QPushButton#btnRet:hover {
+    /* 矩形 3 */
+    position: absolute;
+    width: 182px;
+    height: 39px;
+    top: 88px;
+    left: -500px;
+    background: rgb(175, 119, 128);
+    border-radius: 20px;
+    /* 登录 */
+    position: absolute;
+    width: 36px;
+    height: 31px;
+    top: 92px;
+    left: -431px;
+    color: rgb(250, 216, 0);
+    font-size: 18px;
+    font-weight: 400;
+}

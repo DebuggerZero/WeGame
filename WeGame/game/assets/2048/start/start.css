@@ -1,0 +1,21 @@
+* {
+    position: absolute;
+}
+
+#GameStartWindows {
+    background-image: url(":/game/assets/2048/start/backGround.png");
+}
+
+#StartGame, #ExitGame {
+    border-radius: 20px;
+    background-color: #FA6B62;
+
+    font-family: Corbel;
+    font-size: 18px;
+    line-height: 27px;
+    text-align: center;
+}
+
+#StartGame:hover , #ExitGame:hover  {
+    background-color: #ad514a;
+}

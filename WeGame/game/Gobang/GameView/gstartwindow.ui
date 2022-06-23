@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>GStartWindow</class>
+ <widget class="QWidget" name="GStartWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>500</width>
+    <height>700</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>GStartWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-image: url(:/game/assets/Gobang/start/backGround.png);</string>
+  </property>
+  <widget class="QPushButton" name="GameStart">
+   <property name="geometry">
+    <rect>
+     <x>175</x>
+     <y>480</y>
+     <width>150</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>开始游戏</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="GameExit">
+   <property name="geometry">
+    <rect>
+     <x>175</x>
+     <y>530</y>
+     <width>150</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>结束游戏</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

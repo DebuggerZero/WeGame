@@ -1,0 +1,123 @@
+QWidget#WndMain {
+    position: relative;
+    width: 788px;
+    height: 578px;
+    background: rgb(105, 112, 134);
+    border-radius: 5px;
+}
+
+QLabel#label {
+    position: absolute;
+    width: 635px;
+    height: 86px;
+    top: 2px;
+    left: 152px;
+    background: rgba(64, 71, 89, 0.67);
+    border-radius: 5px;
+}
+
+QLabel#label_2 {
+    /* 矩形 1 */
+    position: absolute;
+    width: 152px;
+    height: 576px;
+    top: 2px;
+    left: 0;
+    background: rgba(65, 71, 103, 0.34);
+}
+
+QLabel#logo {
+    /* logo 1 */
+    position: absolute;
+    width: 152px;
+    height: 130px;
+    top: 0;
+    left: 0;
+    border-radius: 11px;
+    background-color: transparent;
+}
+
+QPushButton#pushButton,#btnGame,#btnHist,#btnUser,#btnAchieve {
+    /* 游 戏 */
+    position: absolute;
+    width: 55px;
+    height: 35px;
+    top: 196px;
+    left: 76px;
+    color: rgb(255, 255, 255);
+    background-color: transparent;
+}
+
+QPushButton#btnGame:hover {
+    /*鼠标放上后*/
+    background: transparent;
+    position: absolute;
+    width: 55px;
+    height: 35px;
+    top: 295px;
+    left: 76px;
+    color: rgb(223, 177, 35);
+}
+
+QPushButton#btnHist:hover {
+    /*鼠标放上后*/
+    background: transparent;
+    position: absolute;
+    width: 55px;
+    height: 35px;
+    top: 295px;
+    left: 76px;
+    color: rgb(223, 177, 35);
+}
+
+QPushButton#btnUser:hover {
+    /*鼠标放上后*/
+    background: transparent;
+    position: absolute;
+    width: 55px;
+    height: 35px;
+    top: 295px;
+    left: 76px;
+    color: rgb(223, 177, 35);
+}
+
+QPushButton#btnAchieve:hover {
+    /*鼠标放上后*/
+    background: transparent;
+    position: absolute;
+    width: 55px;
+    height: 35px;
+    top: 295px;
+    left: 76px;
+    color: rgb(223, 177, 35);
+}
+
+QPushButton#btnClose:hover {
+    /*鼠标放上后*/
+    image: url(":/image/image/ClosehoIcon.png");
+}
+
+QPushButton#btnDwi:hover {
+    /*鼠标放上后*/
+    background: transparent;
+    image: url(":/image/image/dwihoIcon.png");
+}
+
+QPushButton#btnInstal:hover {
+    /*鼠标放上后*/
+    background: transparent;
+    image: url(":/image/image/InstalhoIcon.png");
+}
+
+QTabWidget::tab-bar {
+    alignment: center;
+}
+
+QTabWidget::pane {
+    border: none;
+}
+
+QListWidget {
+background: transparent;
+color: rgb(255, 255, 255);
+}

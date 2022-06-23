@@ -1,0 +1,46 @@
+<RCC>
+    <qresource prefix="/image">
+        <file>image/achiIcon.png</file>
+        <file>image/gameIcon.png</file>
+        <file>image/histIcon.png</file>
+        <file>image/logo.png</file>
+        <file>image/userIcon.png</file>
+        <file>image/closeIcon.png</file>
+        <file>image/dwiIcon.png</file>
+        <file>image/installcon.png</file>
+        <file>image/ClosehoIcon.png</file>
+        <file>image/dwihoIcon.png</file>
+        <file>image/InstalhoIcon.png</file>
+        <file>wndmain.qss</file>
+        <file>wndlogin.qss</file>
+        <file>image/welIcon.png</file>
+        <file>image/passwordIcon.png</file>
+        <file>image/unameIcon.png</file>
+        <file>image/accountIcon.png</file>
+        <file>image/comingsoon.png</file>
+        <file>image/1.png</file>
+    </qresource>
+    <qresource prefix="/">
+        <file>game/assets/2048/main/backGround.png</file>
+        <file>game/assets/2048/main/main.css</file>
+        <file>game/assets/2048/start/backGround.png</file>
+        <file>game/assets/2048/start/start.css</file>
+        <file>game/assets/Gobang/main/backGround.png</file>
+        <file>game/assets/Gobang/main/frame.png</file>
+        <file>game/assets/Gobang/main/rim.png</file>
+        <file>game/assets/Gobang/start/backGround.png</file>
+        <file>game/assets/Snake/backGround.png</file>
+        <file>game/assets/Snake/title.png</file>
+        <file>game/assets/Gobang/logo.png</file>
+        <file>game/assets/Snake/logo.png</file>
+        <file>game/assets/GuessColor/logo.png</file>
+        <file>game/assets/2048/2048.png</file>
+        <file>game/assets/color/1.png</file>
+        <file>game/assets/color/2.png</file>
+        <file>game/assets/color/3.00.png</file>
+        <file>game/assets/color/3.0.png</file>
+        <file>game/assets/color/3.png</file>
+        <file>game/assets/color/login.png</file>
+        <file>game/assets/color/login1.png</file>
+    </qresource>
+</RCC>

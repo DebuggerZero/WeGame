@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>GameStartWindows</class>
+ <widget class="QWidget" name="GameStartWindows">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>500</height>
+   </rect>
+  </property>
+  <property name="focusPolicy">
+   <enum>Qt::TabFocus</enum>
+  </property>
+  <property name="windowTitle">
+   <string>GameStartWindows</string>
+  </property>
+  <widget class="QPushButton" name="StartGame">
+   <property name="geometry">
+    <rect>
+     <x>106</x>
+     <y>297</y>
+     <width>188</width>
+     <height>53</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>开始游戏</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="ExitGame">
+   <property name="geometry">
+    <rect>
+     <x>106</x>
+     <y>390</y>
+     <width>188</width>
+     <height>53</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>退出游戏</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
