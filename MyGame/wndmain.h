@@ -4,8 +4,8 @@
 #include <QWidget>
 #include <QFile>
 #include <QStringList>
-#include<QMenu>
-#include<QAction>
+#include <QMenu>
+#include <QAction>
 
 #include "game/2048/GameView/gamestartwindows.h"
 #include "game/Gobang/GameView/gstartwindow.h"
@@ -26,16 +26,11 @@ public:
     WndMain(QWidget *parent = nullptr);
     /****************************/
     QMenu *m_rightClieckMenu;
-    QAction *m_openAction ;
+    QAction *m_openAction;
     QAction *View_achievements;
     QAction *View_records;
     void doAction();
     void contextMenuEvent(QContextMenuEvent* event);
-
-    void openTZFE();
-    void openGobang();
-    void openSnake();
-    void openColor();
     /********************************/
     ~WndMain();
 
@@ -54,9 +49,16 @@ private slots:
 
     void on_btnClose_clicked();
 
+    void openTZFE();
+    void openGobang();
+    void openSnake();
+    void openColor();
+
 private:
     Ui::WndMain *ui;
 
     bool _isOpen;
+
+//    std::function<void(void)> openGame;
 };
 #endif // WNDMAIN_H
