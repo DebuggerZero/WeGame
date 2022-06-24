@@ -20,6 +20,7 @@
         <file>image/comingsoon.png</file>
         <file>image/1.png</file>
         <file>image/2.png</file>
+        <file>image/keep1.png</file>
     </qresource>
     <qresource prefix="/">
         <file>game/assets/2048/main/backGround.png</file>
