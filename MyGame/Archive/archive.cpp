@@ -170,6 +170,8 @@ bool Archive::isLogin(QString account, QString password)
 
     QFile file(PATH + thisaccount + "/" + thisaccount + ".txt");
 
+    if (!file.exists()) return false;
+
     file.open(QIODevice::ReadOnly);
 
     QByteArray data = file.readAll();
