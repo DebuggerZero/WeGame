@@ -32,7 +32,7 @@ WndMain::WndMain(QWidget *parent)
     });
 
     //记录
-    connect(ui->tabWidget, &QTabWidget::tabBarClicked, this, [=](int index){
+    /*connect(ui->tabWidget, &QTabWidget::tabBarClicked, this, [=](int index){
         int currentIndex = index;
         Archive archive(ui->tabWidget->tabText(currentIndex));
         QVector<struct GameTime> records = archive.getRecords();
@@ -60,7 +60,7 @@ WndMain::WndMain(QWidget *parent)
             ui->listWidget_4->clear();
             ui->listWidget_4->addItems(lists);
         }
-    });
+    });*/
 
 
     m_rightClieckMenu = new QMenu(this);
@@ -108,7 +108,7 @@ void WndMain::on_btnUser_clicked()
 
 void WndMain::on_btnHist_clicked()
 {
-    emit ui->tabWidget->tabBarClicked(0);
+    //emit ui->tabWidget->tabBarClicked(0);
     ui->MainWindow->setCurrentWidget(ui->History);
 }
 
