@@ -70,7 +70,7 @@ private:
     int _number;
     long _gameTime;
 
-    const QString PATH = "C:/MyGame/";
+    const QString PATH = "C:/MyGame/user/";
 
     void createDir(QString path);
 };
