@@ -70,7 +70,7 @@ bool WndLogin::isTrue()
     Archive archive;
 
     if(!archive.isLogin(thisaccount, thisPass)){
-        QMessageBox::information(NULL, "登录失败", "用户或密码错误或为空！！"); //警告乱码问题
+        QMessageBox::information(NULL, "登录失败", "账号或密码错误或为空！！"); //警告乱码问题
         return false;
     }
     return true;
@@ -85,7 +85,7 @@ bool WndLogin::isFix(const QString str1, const QString str2)
 
         UserDir.removeRecursively();
 
-        QMessageBox::information(NULL,"错误","密码不能为空！！"); //警告乱码问题
+        QMessageBox::information(NULL, "错误", "密码不能为空！！"); //警告乱码问题
 
         return false;
     }
@@ -157,7 +157,7 @@ void WndLogin::on_btnReg__clicked()
 bool WndLogin::isEmUser(const QString str)
 {
     if(str==nullptr){
-        QMessageBox::information(NULL,"错误","账号不能为空！");     //警告乱码问题
+        QMessageBox::information(NULL, "错误", "账号不能为空！");     //警告乱码问题
         return false;
     }
     QDir Findir("C:/MyGame/user/" + str);
@@ -185,9 +185,9 @@ bool WndLogin::isEmUser(const QString str)
 
 bool WndLogin::isTre()
 {
-    if(!(ui->eAccount_->text().length()<5&&ui->ePassword->text().length()<10))
+    if(!(ui->eAccount_->text().length()<5 && ui->ePassword->text().length()<10))
     {
-        QMessageBox::information(NULL,"错误","用户名或密码违法长度！");     //警告乱码问题
+        QMessageBox::information(NULL,"错误","账号或密码违法长度！");     //警告乱码问题
         ui->eAccount_->clear();
         ui->ePassword->clear();
         ui->ePassword_->clear();

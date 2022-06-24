@@ -13,7 +13,13 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="../../../imandqss.qrc">
+    <normaloff>:/game/assets/Snake/logo.png</normaloff>:/game/assets/Snake/logo.png</iconset>
+  </property>
  </widget>
- <resources/>
+ <resources>
+  <include location="../../../imandqss.qrc"/>
+ </resources>
  <connections/>
 </ui>

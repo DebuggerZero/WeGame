@@ -25,6 +25,10 @@
   <property name="windowTitle">
    <string>色彩达人</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="../../imandqss.qrc">
+    <normaloff>:/game/assets/GuessColor/logo.png</normaloff>:/game/assets/GuessColor/logo.png</iconset>
+  </property>
   <property name="styleSheet">
    <string notr="true"/>
   </property>
@@ -1030,6 +1034,8 @@ background-color: rgb(255, 255, 255);</string>
   <zorder>prepare_box</zorder>
   <zorder>login</zorder>
  </widget>
- <resources/>
+ <resources>
+  <include location="../../imandqss.qrc"/>
+ </resources>
  <connections/>
 </ui>
