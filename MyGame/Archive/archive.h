@@ -8,11 +8,6 @@
 #include <QDir>
 #include <QVector>
 
-struct User {
-    QString userName;
-    QString account;
-};
-
 struct GameTime {
     int number;
     int bestScore;
@@ -56,6 +51,10 @@ public:
     bool isLogin(QString account, QString password);
 
     QVector<struct GameTime> getRecords();
+
+    static QString userName;
+
+    static QString account;
 
 private:
 
