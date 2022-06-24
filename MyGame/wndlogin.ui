@@ -302,9 +302,11 @@ height: 39px;
 top: -68px;
 left: -500px;
 
-
 background: rgb(255, 255, 255);
 border-radius: 20px;</string>
+     </property>
+     <property name="echoMode">
+      <enum>QLineEdit::Password</enum>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -474,6 +476,9 @@ border-radius: 20px;</string>
      <property name="text">
       <string/>
      </property>
+     <property name="echoMode">
+      <enum>QLineEdit::Password</enum>
+     </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
      </property>
@@ -519,6 +524,9 @@ border-radius: 20px;</string>
      </property>
      <property name="text">
       <string/>
+     </property>
+     <property name="echoMode">
+      <enum>QLineEdit::Password</enum>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>

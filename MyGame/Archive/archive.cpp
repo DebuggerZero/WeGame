@@ -1,5 +1,8 @@
 #include "archive.h"
 
+QString Archive::account = "";
+QString Archive::userName = "";
+
 Archive::Archive() {
 
 }
@@ -169,11 +172,16 @@ bool Archive::isLogin(QString account, QString password)
 
     file.open(QIODevice::ReadOnly);
 
-    QByteArray data=file.readAll();
+    QByteArray data = file.readAll();
     const QString TrulyPass = QString(data);
+    QStringList s = TrulyPass.split(":");
+    Archive::userName = s.at(0);
+    Archive::account = thisaccount;
     file.close();
 
-    if (thisPass==TrulyPass) return true;
+    if (thisPass == s.at(1)) {
+        return true;
+    }
     else{
         return false;
     }

@@ -23,7 +23,7 @@ void WndLogin::Init()
 
     QAction *searchAction_1 = new QAction(ui->ePass);
     searchAction_1->setIcon(QIcon(":/image/image/passwordIcon.png"));
-    ui->ePass->addAction(searchAction_1,QLineEdit::LeadingPosition);
+    ui->ePass->addAction(searchAction_1, QLineEdit::LeadingPosition);
 
     QAction *searchAction_2 = new QAction(ui->eUers);
     searchAction_2->setIcon(QIcon(":/image/image/unameIcon.png"));
@@ -40,11 +40,6 @@ void WndLogin::Init()
     QAction *searchAction_5 = new QAction(ui->ePassword_);
     searchAction_5->setIcon(QIcon(":/image/image/passwordIcon.png"));
     ui->ePassword_->addAction(searchAction_5,QLineEdit::LeadingPosition);
-
-    //密码模式
-    ui->ePass->setEchoMode(QLineEdit::Password);
-    ui->ePassword->setEchoMode(QLineEdit::Password);
-    ui->ePassword_->setEchoMode(QLineEdit::Password);
 
     QPalette wrong_1;
     wrong_1.setColor(QPalette::PlaceholderText,QColor(127,127,127));
@@ -66,13 +61,12 @@ void WndLogin::Init()
     wrong_4.setColor(QPalette::PlaceholderText,QColor(127,127,127));
     ui->ePassword_->setPalette(wrong_4);
     ui->ePassword_->setPlaceholderText(QString("确认密码："));
-
 }
 
 bool WndLogin::isTrue()
 {
     QString thisaccount= ui->eAccount->text();
-    QString thisPass=ui->ePass->text();
+    QString thisPass= ui->ePass->text();
     Archive archive;
 
     if(!archive.isLogin(thisaccount, thisPass)){
@@ -85,9 +79,9 @@ bool WndLogin::isTrue()
 bool WndLogin::isFix(const QString str1, const QString str2)
 {
     //确定两次输入的密码是否相同
-    if(str1==nullptr&&str2==nullptr)
+    if(str1==nullptr && str2==nullptr)
     {
-        QDir UserDir("C:/MyGame/user/"+ui->eAccount_->text());
+        QDir UserDir("C:/MyGame/user/" + ui->eAccount_->text());
 
         UserDir.removeRecursively();
 
@@ -129,18 +123,19 @@ void WndLogin::on_btnRet_clicked()
 
 void WndLogin::on_btnReg__clicked()
 {
-    //判断用户名是否存在
+    //判断账号是否存在
     if(!isEmUser(ui->eAccount_->text())) return;
     //判断长度
     if(!isTre()) return;
     //接收密码字符串
-    const QString onePass=ui->ePassword->text();
-    const QString RePass=ui->ePassword_->text();
+    const QString user = ui->eUers->text();
+    const QString onePass= ui->ePassword->text();
+    const QString RePass= ui->ePassword_->text();
 
     //调用IsFix函数判断 密码不一致
     if(!isFix(onePass,RePass)) return ;
 
-    QDir UserDir("C:/MyGame/user/"+ui->eAccount_->text()+"/");
+    QDir UserDir("C:/MyGame/user/"+ ui->eAccount_->text() + "/");
 
     QFile UserFile(UserDir.filePath(ui->eAccount_->text()+".txt"));
 
@@ -148,15 +143,15 @@ void WndLogin::on_btnReg__clicked()
     UserFile.open(QIODevice::WriteOnly);
 
     //创建新用户，并存到本地文档中储存
-     UserFile.write(onePass.toLatin1());
-     QMessageBox::information(NULL,"注册成功","欢迎！！");     //警告乱码问题
-     UserFile.close();
+    UserFile.write(user.toLatin1() + ":" + onePass.toLatin1());
+    QMessageBox::information(NULL,"注册成功","欢迎！！");     //警告乱码问题
+    UserFile.close();
 
-     //清除
-     ui->eAccount_->clear();
-     ui->ePassword->clear();
-     ui->ePassword_->clear();
-     ui->eUers->clear();
+    //清除
+    ui->eAccount_->clear();
+    ui->ePassword->clear();
+    ui->ePassword_->clear();
+    ui->eUers->clear();
 }
 
 bool WndLogin::isEmUser(const QString str)
@@ -165,17 +160,17 @@ bool WndLogin::isEmUser(const QString str)
         QMessageBox::information(NULL,"错误","账号不能为空！");     //警告乱码问题
         return false;
     }
-    QDir Findir("C:/MyGame/user/"+str);
+    QDir Findir("C:/MyGame/user/" + str);
     //查找用户名是否相同
     if(Findir.exists()){ //找到
         //创建用户失败
         ui->eAccount_->clear();
-         QPalette wrong;
-         wrong.setColor(QPalette::PlaceholderText,QColor(255,0,0));
-         ui->eAccount_->setPalette(wrong);
-         ui->eAccount_->setPlaceholderText(QString("此账号已存在"));
-         return false;
-       }
+        QPalette wrong;
+        wrong.setColor(QPalette::PlaceholderText,QColor(255,0,0));
+        ui->eAccount_->setPalette(wrong);
+        ui->eAccount_->setPlaceholderText(QString("此账号已存在"));
+        return false;
+    }
 
     QDir UserDir1("C:/MyGame/user/");
     //创建文件夹
@@ -192,16 +187,16 @@ bool WndLogin::isTre()
 {
     if(!(ui->eAccount_->text().length()<5&&ui->ePassword->text().length()<10))
     {
-       QMessageBox::information(NULL,"错误","用户名或密码违法长度！");     //警告乱码问题
-       ui->eAccount_->clear();
-       ui->ePassword->clear();
-       ui->ePassword_->clear();
-       ui->eUers->clear();
-       QDir UserDir("C:/MyGame/user/" + ui->eAccount_->text());
+        QMessageBox::information(NULL,"错误","用户名或密码违法长度！");     //警告乱码问题
+        ui->eAccount_->clear();
+        ui->ePassword->clear();
+        ui->ePassword_->clear();
+        ui->eUers->clear();
+        QDir UserDir("C:/MyGame/user/" + ui->eAccount_->text());
 
-       UserDir.removeRecursively();
+        UserDir.removeRecursively();
 
-       return false;
+        return false;
     }
     return true;
 }
