@@ -180,18 +180,20 @@ bool Widget::check()//匹配颜色差
     color3[2] = color2[2] > 255 - color2[2] ? color2[2] : 255 - color2[2];
     float result =100- (float)(abs(color1[0] - color2[0]) + abs(color1[1] - color2[1])  + abs(color1[2] - color2[2])) /
             (color3[0]+color3[1]+color3[2])*100;
-    static float m=80;
+    float m = 80;
     if(result>m)
     {
         ui->results->setText(QString::number(result,'f',2)+"%");
         ui->results->show();
         m_timer->start(1000);
-        if(m<99)m+=2*(score+1);
+        if(m + 2 * (score + 1) >= 98) m = 98;
+        else m += 2 * (score + 1);
         score++;
         ui->scores->display(QString::number(score));
         return true;
     }
-    else return false;
+    else
+        return false;
 }
 
 void Widget::on_exit_game_clicked()//退出游戏
