@@ -119,5 +119,6 @@ QTabWidget::pane {
 
 QListWidget {
 background: transparent;
+font-size: 19px;
 color: rgb(255, 255, 255);
 }

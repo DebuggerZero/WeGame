@@ -286,7 +286,7 @@
     <string notr="true"/>
    </property>
    <property name="currentIndex">
-    <number>3</number>
+    <number>1</number>
    </property>
    <widget class="QWidget" name="AllGame">
     <widget class="Line" name="line">
@@ -568,12 +568,12 @@ border-radius: 25px;</string>
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap resource="imandqss.qrc">:/image/image/haibaoc.png</pixmap>
+      <pixmap resource="imandqss.qrc">:/image/image/2.png</pixmap>
      </property>
     </widget>
    </widget>
    <widget class="QWidget" name="History">
-    <widget class="QPushButton" name="pushButton_2">
+    <widget class="QPushButton" name="snakeRecordButton">
      <property name="geometry">
       <rect>
        <x>110</x>
@@ -614,7 +614,7 @@ letter-spacing: 0px;
       <string>贪吃蛇</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_3">
+    <widget class="QPushButton" name="gobangRecordButton">
      <property name="geometry">
       <rect>
        <x>210</x>
@@ -655,7 +655,7 @@ letter-spacing: 0px;
       <string>五子棋</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_4">
+    <widget class="QPushButton" name="colorRecordButton">
      <property name="geometry">
       <rect>
        <x>310</x>
@@ -839,7 +839,7 @@ text-align: left;
       <string>结束时间</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton">
+    <widget class="QPushButton" name="tzfeRecordButton">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -897,15 +897,59 @@ letter-spacing: 0px;
       <string/>
      </property>
     </widget>
+    <widget class="QListWidget" name="numberList">
+     <property name="geometry">
+      <rect>
+       <x>11</x>
+       <y>90</y>
+       <width>173</width>
+       <height>531</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QListWidget" name="scoreList">
+     <property name="geometry">
+      <rect>
+       <x>207</x>
+       <y>90</y>
+       <width>173</width>
+       <height>531</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QListWidget" name="startTimeList">
+     <property name="geometry">
+      <rect>
+       <x>402</x>
+       <y>90</y>
+       <width>173</width>
+       <height>531</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QListWidget" name="endTimeList">
+     <property name="geometry">
+      <rect>
+       <x>597</x>
+       <y>90</y>
+       <width>173</width>
+       <height>531</height>
+      </rect>
+     </property>
+    </widget>
     <zorder>label_9</zorder>
-    <zorder>pushButton_3</zorder>
-    <zorder>pushButton_4</zorder>
+    <zorder>gobangRecordButton</zorder>
+    <zorder>colorRecordButton</zorder>
     <zorder>label_10</zorder>
     <zorder>label_11</zorder>
     <zorder>label_12</zorder>
-    <zorder>pushButton_2</zorder>
-    <zorder>pushButton</zorder>
+    <zorder>snakeRecordButton</zorder>
+    <zorder>tzfeRecordButton</zorder>
     <zorder>label_13</zorder>
+    <zorder>numberList</zorder>
+    <zorder>scoreList</zorder>
+    <zorder>startTimeList</zorder>
+    <zorder>endTimeList</zorder>
    </widget>
    <widget class="QWidget" name="User">
     <widget class="QLabel" name="label_5">
@@ -993,9 +1037,9 @@ letter-spacing: 0px;
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>-20</y>
-        <width>602</width>
-        <height>888</height>
+        <y>0</y>
+        <width>605</width>
+        <height>637</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_6">
