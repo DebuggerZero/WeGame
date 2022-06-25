@@ -27,7 +27,7 @@
   </property>
   <property name="windowIcon">
    <iconset resource="../../imandqss.qrc">
-    <normaloff>:/game/assets/GuessColor/logo.png</normaloff>:/game/assets/GuessColor/logo.png</iconset>
+    <normaloff>:/game/assets/color/logo.png</normaloff>:/game/assets/color/logo.png</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true"/>
