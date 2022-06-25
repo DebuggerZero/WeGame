@@ -36,6 +36,17 @@ WndMain::WndMain(QWidget *parent)
         showList("2048");
     });
 
+    connect(ui->snakeRecordButton, &QPushButton::clicked, this, [=](){
+        showList("贪吃蛇");
+    });
+
+    connect(ui->gobangRecordButton, &QPushButton::clicked, this, [=](){
+        showList("五子棋");
+    });
+
+    connect(ui->colorRecordButton, &QPushButton::clicked, this, [=](){
+        showList("色彩达人");
+    });
 
     m_rightClieckMenu = new QMenu(this);
     //设置菜单样式
@@ -127,17 +138,25 @@ void WndMain::showList(QString gameName)
 {
     Archive archive(gameName);
     QVector<struct GameTime> records = archive.getRecords();
-    QStringList lists;
+    QStringList numberLists;
+    QStringList scoreLists;
+    QStringList startTimeLists;
+    QStringList endTimeLists;
     for (int i = 0; i < records.length(); i++) {
         struct GameTime record = records.at(i);
-        QString s = "                  " + QString::number(record.number) + "                                       " +
-                QString::number(record.bestScore) + "\t\t" +
-                record.startTime + "\t\t" + record.endTime;
-        lists << s;
+        numberLists.append(QString::number(record.number));
+        scoreLists.append(QString::number(record.bestScore));
+        startTimeLists.append(record.startTime);
+        endTimeLists.append(record.endTime);
     }
-
-    ui->listWidget->clear();
-    ui->listWidget->addItems(lists);
+    ui->numberList->clear();
+    ui->numberList->addItems(numberLists);
+    ui->scoreList->clear();
+    ui->scoreList->addItems(scoreLists);
+    ui->startTimeList->clear();
+    ui->startTimeList->addItems(startTimeLists);
+    ui->endTimeList->clear();
+    ui->endTimeList->addItems(endTimeLists);
 }
 
 void WndMain::openTZFE()
