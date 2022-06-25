@@ -35,7 +35,6 @@
         <file>game/assets/Snake/title.png</file>
         <file>game/assets/Gobang/logo.png</file>
         <file>game/assets/Snake/logo.png</file>
-        <file>game/assets/GuessColor/logo.png</file>
         <file>game/assets/2048/2048.png</file>
         <file>game/assets/color/1.png</file>
         <file>game/assets/color/2.png</file>
@@ -46,5 +45,6 @@
         <file>game/assets/color/login1.png</file>
         <file>image/2.png</file>
         <file>image/keep1.png</file>
+        <file>game/assets/color/logo.png</file>
     </qresource>
 </RCC>
