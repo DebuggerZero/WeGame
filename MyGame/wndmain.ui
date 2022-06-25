@@ -286,7 +286,7 @@
     <string notr="true"/>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="AllGame">
     <widget class="Line" name="line">
@@ -557,9 +557,6 @@ border-radius: 25px;</string>
       <font>
        <stylestrategy>PreferAntialias</stylestrategy>
       </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-image: url(:/image/image/haibaoc.png);</string>
      </property>
      <property name="frameShape">
       <enum>QFrame::Panel</enum>
@@ -1304,7 +1301,7 @@ background-color: rgb(147, 150, 157);
    <property name="geometry">
     <rect>
      <x>230</x>
-     <y>0</y>
+     <y>10</y>
      <width>351</width>
      <height>41</height>
     </rect>
@@ -1326,7 +1323,7 @@ background-color: rgb(147, 150, 157);
    <property name="geometry">
     <rect>
      <x>230</x>
-     <y>50</y>
+     <y>60</y>
      <width>351</width>
      <height>41</height>
     </rect>
