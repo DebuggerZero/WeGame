@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>GStartWidght</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="../../../imandqss.qrc">
+    <normaloff>:/game/assets/Snake/logo.png</normaloff>:/game/assets/Snake/logo.png</iconset>
+  </property>
   <widget class="QPushButton" name="startButton">
    <property name="geometry">
     <rect>
@@ -62,6 +66,8 @@ background: rgb(103, 103, 120);
    </property>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="../../../imandqss.qrc"/>
+ </resources>
  <connections/>
 </ui>

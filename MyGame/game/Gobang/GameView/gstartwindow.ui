@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>GStartWindow</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="../../../imandqss.qrc">
+    <normaloff>:/game/assets/Gobang/logo.png</normaloff>:/game/assets/Gobang/logo.png</iconset>
+  </property>
   <property name="styleSheet">
    <string notr="true">background-image: url(:/game/assets/Gobang/start/backGround.png);</string>
   </property>
@@ -43,6 +47,8 @@
    </property>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="../../../imandqss.qrc"/>
+ </resources>
  <connections/>
 </ui>

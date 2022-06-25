@@ -16,14 +16,12 @@
     <height>442</height>
    </size>
   </property>
-  <property name="maximumSize">
-   <size>
-    <width>797</width>
-    <height>442</height>
-   </size>
-  </property>
   <property name="windowTitle">
    <string>Form</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="imandqss.qrc">
+    <normaloff>:/image/image/logo.png</normaloff>:/image/image/logo.png</iconset>
   </property>
   <widget class="QLabel" name="label">
    <property name="geometry">
@@ -597,6 +595,8 @@ border-radius: 20px;</string>
    </widget>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="imandqss.qrc"/>
+ </resources>
  <connections/>
 </ui>

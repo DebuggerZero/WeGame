@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="../../../imandqss.qrc">
+    <normaloff>:/game/assets/Gobang/logo.png</normaloff>:/game/assets/Gobang/logo.png</iconset>
+  </property>
   <widget class="QPushButton" name="restart">
    <property name="geometry">
     <rect>
@@ -69,6 +73,8 @@
    </property>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="../../../imandqss.qrc"/>
+ </resources>
  <connections/>
 </ui>

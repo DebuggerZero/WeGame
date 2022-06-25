@@ -62,8 +62,8 @@ long Archive::getGameTime()
 
 void Archive::writeGameStorage()
 {
-    QString fullPath = PATH + "Game/" + _gameName;
-    createDir("Game/" + _gameName + "/");
+    QString fullPath = PATH + Archive::account + "/Game/" + _gameName;
+    createDir(Archive::account + "/Game/" + _gameName + "/");
     QFile file(fullPath + "/data.txt");
     file.open(QIODevice::WriteOnly);
     QTextStream textStream(&file);
@@ -86,8 +86,8 @@ void Archive::writeGameStorage()
 
 void Archive::writeGameRecords()
 {
-    QString fullPath = PATH + "Game/" + _gameName;
-    createDir("Game/" + _gameName + "/");
+    QString fullPath = PATH + Archive::account + "/Game/" + _gameName;
+    createDir(Archive::account + "/Game/" + _gameName + "/");
     QFile file(fullPath + "/records.txt");
     file.open(QIODevice::Append);
     QTextStream textStream(&file);
@@ -103,8 +103,8 @@ void Archive::writeGameRecords()
 
 void Archive::readGameStorage()
 {
-    QString fullPath = PATH + "Game/" + _gameName;
-    createDir("Game/" + _gameName + "/");
+    QString fullPath = PATH + Archive::account + "/Game/" + _gameName;
+    createDir(Archive::account + "/Game/" + _gameName + "/");
     QFile file(fullPath + "/data.txt");
     if (!file.exists()) {
         _bestScore = 0;
@@ -135,8 +135,8 @@ void Archive::readGameStorage()
 
 void Archive::readGameRecords()
 {
-    QString fullPath = PATH + "Game/" + _gameName;
-    createDir("Game/" + _gameName + "/");
+    QString fullPath = PATH + Archive::account + "/Game/" + _gameName;
+    createDir(Archive::account + "/Game/" + _gameName + "/");
     QFile file(fullPath + "/records.txt");
     if (!file.exists()) {
         return;
@@ -168,7 +168,9 @@ bool Archive::isLogin(QString account, QString password)
         return false;
     }
 
-    QFile file("C:/MyGame/user/" + thisaccount + "/" + thisaccount + ".txt");
+    QFile file(PATH + thisaccount + "/" + thisaccount + ".txt");
+
+    if (!file.exists()) return false;
 
     file.open(QIODevice::ReadOnly);
 
