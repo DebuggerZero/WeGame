@@ -45,5 +45,6 @@
         <file>game/assets/color/login.png</file>
         <file>game/assets/color/login1.png</file>
         <file>image/2.png</file>
+        <file>image/keep1.png</file>
     </qresource>
 </RCC>
