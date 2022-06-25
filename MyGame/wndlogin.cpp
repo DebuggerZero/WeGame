@@ -8,6 +8,8 @@ WndLogin::WndLogin(QWidget *parent) :
     ui->setupUi(this);
 
     this->setStyleSheet(Utility::getStyleSheet(":/image/wndlogin.qss"));
+
+    Init();
 }
 
 WndLogin::~WndLogin()
@@ -18,27 +20,27 @@ WndLogin::~WndLogin()
 void WndLogin::Init()
 {
     QAction *searchAction_0 = new QAction(ui->eAccount);
-    searchAction_0->setIcon(QIcon(":/image/image/accountIcon.png"));
+    searchAction_0->setIcon(QIcon(":/image/image/accountIcon.svg"));
     ui->eAccount->addAction(searchAction_0,QLineEdit::LeadingPosition);
 
     QAction *searchAction_1 = new QAction(ui->ePass);
-    searchAction_1->setIcon(QIcon(":/image/image/passwordIcon.png"));
+    searchAction_1->setIcon(QIcon(":/image/image/passwordIcon.svg"));
     ui->ePass->addAction(searchAction_1, QLineEdit::LeadingPosition);
 
     QAction *searchAction_2 = new QAction(ui->eUers);
-    searchAction_2->setIcon(QIcon(":/image/image/unameIcon.png"));
+    searchAction_2->setIcon(QIcon(":/image/image/unameIcon.svg"));
     ui->eUers->addAction(searchAction_2,QLineEdit::LeadingPosition);
 
     QAction *searchAction_3 = new QAction(ui->eAccount_);
-    searchAction_3->setIcon(QIcon(":/image/image/accountIcon.png"));
+    searchAction_3->setIcon(QIcon(":/image/image/accountIcon.svg"));
     ui->eAccount_->addAction(searchAction_3,QLineEdit::LeadingPosition);
 
     QAction *searchAction_4 = new QAction(ui->ePassword);
-    searchAction_4->setIcon(QIcon(":/image/image/passwordIcon.png"));
+    searchAction_4->setIcon(QIcon(":/image/image/passwordIcon.svg"));
     ui->ePassword->addAction(searchAction_4,QLineEdit::LeadingPosition);
 
     QAction *searchAction_5 = new QAction(ui->ePassword_);
-    searchAction_5->setIcon(QIcon(":/image/image/passwordIcon.png"));
+    searchAction_5->setIcon(QIcon(":/image/image/passwordIcon.svg"));
     ui->ePassword_->addAction(searchAction_5,QLineEdit::LeadingPosition);
 
     QPalette wrong_1;

@@ -32,35 +32,9 @@ WndMain::WndMain(QWidget *parent)
     });
 
     //记录
-    /*connect(ui->tabWidget, &QTabWidget::tabBarClicked, this, [=](int index){
-        int currentIndex = index;
-        Archive archive(ui->tabWidget->tabText(currentIndex));
-        QVector<struct GameTime> records = archive.getRecords();
-        QStringList lists;
-        for (int i = 0; i < records.length(); i++) {
-            struct GameTime record = records.at(i);
-            QString s = "        " + QString::number(record.number) + "\t|\t" +
-                    QString::number(record.bestScore) + "\t|           " +
-                    record.startTime + "\t|          " + record.endTime;
-            lists << s;
-        }
-        if (currentIndex == 0) {
-            ui->listWidget->clear();
-            ui->listWidget->addItems(lists);
-        }
-        else if (currentIndex == 1) {
-            ui->listWidget_2->clear();
-            ui->listWidget_2->addItems(lists);
-        }
-        else if (currentIndex == 2) {
-            ui->listWidget_3->clear();
-            ui->listWidget_3->addItems(lists);
-        }
-        else if (currentIndex == 3) {
-            ui->listWidget_4->clear();
-            ui->listWidget_4->addItems(lists);
-        }
-    });*/
+    connect(ui->tzfeRecordButton, &QPushButton::clicked, this, [=](){
+        showList("2048");
+    });
 
 
     m_rightClieckMenu = new QMenu(this);
@@ -147,6 +121,23 @@ void WndMain::contextMenuEvent(QContextMenuEvent *event)
         connect(m_openAction, &QAction::triggered, this, &WndMain::openColor);
         m_rightClieckMenu->exec(event->globalPos());
     }
+}
+
+void WndMain::showList(QString gameName)
+{
+    Archive archive(gameName);
+    QVector<struct GameTime> records = archive.getRecords();
+    QStringList lists;
+    for (int i = 0; i < records.length(); i++) {
+        struct GameTime record = records.at(i);
+        QString s = "                  " + QString::number(record.number) + "                                       " +
+                QString::number(record.bestScore) + "\t\t" +
+                record.startTime + "\t\t" + record.endTime;
+        lists << s;
+    }
+
+    ui->listWidget->clear();
+    ui->listWidget->addItems(lists);
 }
 
 void WndMain::openTZFE()

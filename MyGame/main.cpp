@@ -8,7 +8,6 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     WndLogin w;
-    //WndMain w;
 
     w.show();
     return a.exec();

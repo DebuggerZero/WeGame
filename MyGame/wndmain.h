@@ -31,6 +31,8 @@ public:
     QAction *View_records;
     void doAction();
     void contextMenuEvent(QContextMenuEvent* event);
+
+    void showList(QString gameName);
     /********************************/
     ~WndMain();
 
