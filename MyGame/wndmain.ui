@@ -19,6 +19,10 @@
   <property name="windowTitle">
    <string>GameWidget</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="imandqss.qrc">
+    <normaloff>:/image/image/logo.png</normaloff>:/image/image/logo.png</iconset>
+  </property>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
@@ -289,7 +293,7 @@
     <string notr="true"/>
    </property>
    <property name="currentIndex">
-    <number>3</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="AllGame">
     <widget class="Line" name="line">
@@ -535,6 +539,9 @@ border-radius: 25px;</string>
            <width>110</width>
            <height>100</height>
           </size>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
          </property>
          <property name="styleSheet">
           <string notr="true">image: url(:/image/image/comingsoon.png);</string>
@@ -993,8 +1000,7 @@ letter-spacing: 0px;
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">color: rgb(255, 255, 255);
-image: url(:/image/image/yuanpi.png);</string>
+      <string notr="true">color: rgb(255, 255, 255);</string>
      </property>
      <property name="text">
       <string/>
@@ -1436,7 +1442,7 @@ font-weight: 1000;
       <string notr="true"/>
      </property>
      <property name="currentIndex">
-      <number>2</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="tzfeAchieve">
       <widget class="QLabel" name="label_45">
@@ -1559,28 +1565,6 @@ border-radius: 4px;
        </property>
        <property name="text">
         <string>未获取</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_43">
-       <property name="geometry">
-        <rect>
-         <x>610</x>
-         <y>100</y>
-         <width>51</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>11</pointsize>
-         <stylestrategy>PreferAntialias</stylestrategy>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: rgb(0, 255, 0)</string>
-       </property>
-       <property name="text">
-        <string>已获取</string>
        </property>
       </widget>
       <widget class="QLabel" name="label_37">
@@ -2379,6 +2363,9 @@ border-radius: 10px;
        <height>51</height>
       </rect>
      </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
      <property name="styleSheet">
       <string notr="true">
 background: rgb(147, 150, 157);
@@ -2406,6 +2393,9 @@ text-align: center;</string>
        <width>121</width>
        <height>51</height>
       </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
      </property>
      <property name="styleSheet">
       <string notr="true">
@@ -2435,6 +2425,9 @@ text-align: center;</string>
        <height>51</height>
       </rect>
      </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
      <property name="styleSheet">
       <string notr="true">
 background: rgb(147, 150, 157);
@@ -2462,6 +2455,9 @@ text-align: center;</string>
        <width>121</width>
        <height>51</height>
       </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
      </property>
      <property name="styleSheet">
       <string notr="true">
@@ -2509,9 +2505,9 @@ font-weight: 1000;
      <property name="geometry">
       <rect>
        <x>300</x>
-       <y>150</y>
+       <y>140</y>
        <width>371</width>
-       <height>31</height>
+       <height>51</height>
       </rect>
      </property>
      <property name="font">
@@ -2527,7 +2523,8 @@ border: 1px solid rgb(147, 150, 157);
 border-radius: 2px;</string>
      </property>
      <property name="text">
-      <string>更换您的个性头像以展示您的风采（需要本地文件）</string>
+      <string>更换您的个性头像以展示您的风采（需要本地文件）
+图片分辨率为111*111</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_22">

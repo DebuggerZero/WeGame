@@ -6,6 +6,7 @@
 #include <QStringList>
 #include <QMenu>
 #include <QAction>
+#include <QFileDialog>
 
 #include "game/2048/GameView/gamestartwindows.h"
 #include "game/Gobang/GameView/gstartwindow.h"
@@ -29,7 +30,6 @@ public:
     QAction *m_openAction;
     QAction *View_achievements;
     QAction *View_records;
-    void doAction();
     void contextMenuEvent(QContextMenuEvent* event);
 
     void showList(QString gameName);
@@ -52,8 +52,11 @@ private slots:
     void on_btnClose_clicked();
 
     void openTZFE();
+
     void openGobang();
+
     void openSnake();
+
     void openColor();
 
 private:
@@ -62,7 +65,5 @@ private:
     bool _isOpen;
 
     void initWindows();
-
-//    std::function<void(void)> openGame;
 };
 #endif // WNDMAIN_H

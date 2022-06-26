@@ -98,20 +98,55 @@ void WndMain::on_btnClose_clicked()
 void WndMain::contextMenuEvent(QContextMenuEvent *event)
 {
     m_openAction->disconnect();
+    View_records->disconnect();
+    View_achievements->disconnect();
+
     if (ui->TZFE->underMouse()) {
         connect(m_openAction, &QAction::triggered, this, &WndMain::openTZFE);
+        connect(View_records, &QAction::triggered, this, [=](){
+            ui->MainWindow->setCurrentWidget(ui->History);
+            showList("2048");
+        });
+        connect(View_achievements, &QAction::triggered, this, [=](){
+            ui->MainWindow->setCurrentWidget(ui->achieve);
+            ui->achieveWidget->setCurrentWidget(ui->tzfeAchieve);
+        });
         m_rightClieckMenu->exec(event->globalPos());
     }
     else if (ui->Snake->underMouse()) {
         connect(m_openAction, &QAction::triggered, this, &WndMain::openSnake);
+        connect(View_records, &QAction::triggered, this, [=](){
+            ui->MainWindow->setCurrentWidget(ui->History);
+            showList("贪吃蛇");
+        });
+        connect(View_achievements, &QAction::triggered, this, [=](){
+            ui->MainWindow->setCurrentWidget(ui->achieve);
+            ui->achieveWidget->setCurrentWidget(ui->snakeAchieve);
+        });
         m_rightClieckMenu->exec(event->globalPos());
     }
     else if (ui->Gobang->underMouse()) {
         connect(m_openAction, &QAction::triggered, this, &WndMain::openGobang);
+        connect(View_records, &QAction::triggered, this, [=](){
+            ui->MainWindow->setCurrentWidget(ui->History);
+            showList("五子棋");
+        });
+        connect(View_achievements, &QAction::triggered, this, [=](){
+            ui->MainWindow->setCurrentWidget(ui->achieve);
+            ui->achieveWidget->setCurrentWidget(ui->gobangAchieve);
+        });
         m_rightClieckMenu->exec(event->globalPos());
     }
     else if (ui->color->underMouse()) {
         connect(m_openAction, &QAction::triggered, this, &WndMain::openColor);
+        connect(View_records, &QAction::triggered, this, [=](){
+            ui->MainWindow->setCurrentWidget(ui->History);
+            showList("色彩达人");
+        });
+        connect(View_achievements, &QAction::triggered, this, [=](){
+            ui->MainWindow->setCurrentWidget(ui->achieve);
+            ui->achieveWidget->setCurrentWidget(ui->colorAchieve);
+        });
         m_rightClieckMenu->exec(event->globalPos());
     }
 }
@@ -197,6 +232,8 @@ void WndMain::initWindows()
 {
     _isOpen = false;
 
+    ui->headPortraitLabel->setPixmap(Archive::headPath);
+
     ui->MainWindow->setCurrentWidget(ui->AllGame);
 
     //===================================================================================
@@ -236,8 +273,7 @@ void WndMain::initWindows()
     View_records->setIcon(QIcon(":/image/image/histIcon.png"));
     //关联菜单项按钮和对应的槽函数
 
-    connect(View_records, &QAction::triggered, this, &WndMain::doAction);
-    connect(View_achievements, &QAction::triggered, this, &WndMain::doAction);
+//    connect(View_achievements, &QAction::triggered, this, &WndMain::doAction);
     //====================================================================================
 
     //====================================================================================
@@ -279,13 +315,17 @@ void WndMain::initWindows()
     });
     //====================================================================================
 
-}
-
-void WndMain::doAction()			//doAction()是一个槽函数
-{
-    QAction *action =  qobject_cast<QAction*>(sender());			//获取是由那个按钮发出的信号
-    if (action == m_openAction)	//如果点击的是“打开”菜单按钮
-        QMessageBox::information(this, "Tips","你点击了打开按钮", QMessageBox::Yes);
-    else if (action == this->View_records) //如果打开的是“关闭”菜单按钮
-        QMessageBox::information(this, "Tips","你点击了关闭按钮", QMessageBox::Yes);
+    //====================================================================================
+    //设置按钮事件
+    connect(ui->btnchead, &QPushButton::clicked, this, [=](){
+        QString path = QFileDialog::getOpenFileName(this, tr("Open File"), ".", tr("TextFiles(*.png, *.jpg)"));
+        if (path != "") {
+            Archive::headPath = path;
+            ui->headPortraitLabel->setPixmap(Archive::headPath);
+            QMessageBox::about(this, "提示", "头像上传成功...");
+        }
+        else {
+            QMessageBox::about(this, "提示", "未选择任何图片...");
+        }
+    });
 }
