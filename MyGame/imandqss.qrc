@@ -30,6 +30,8 @@
         <file>image/colour2.png</file>
         <file>image/colour1.png</file>
         <file>image/gobang1.png</file>
+        <file>image/3.png</file>
+        <file>image/1000.mp4</file>
     </qresource>
     <qresource prefix="/">
         <file>game/assets/2048/main/backGround.png</file>
