@@ -2,24 +2,29 @@
 #define WNDLOGIN_H
 
 #include <QWidget>
+#include <QMediaPlayer>
+#include <QVideoWidget>
+#include <QMainWindow>
 #include <QAction>
 #include <QFile>
 #include <QLineEdit>
 #include <QMessageBox>
+#include <QUrl>
 #include <QDir>
 #include <QPalette>
+#include <QTimer>
 #include "wndmain.h"
 
 namespace Ui {
 class WndLogin;
 }
 
-class WndLogin : public QWidget
+class WndLogin : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    explicit WndLogin(QWidget *parent = nullptr);
+    explicit WndLogin(QMainWindow *parent = nullptr);
     ~WndLogin();
     void Init();
     bool isTrue();
@@ -39,7 +44,9 @@ private slots:
 
 private:
     Ui::WndLogin *ui;
-
+    QMediaPlayer *player;
+    QVideoWidget *videoWidget;
+    QTimer *timer;
 };
 
 #endif // WNDLOGIN_H

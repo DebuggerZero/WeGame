@@ -1,12 +1,14 @@
 ﻿#include "wndlogin.h"
 #include "ui_wndlogin.h"
 
-WndLogin::WndLogin(QWidget *parent) :
-    QWidget(parent),
+
+WndLogin::WndLogin(QMainWindow *parent) :
+    QMainWindow(parent),
     ui(new Ui::WndLogin)
 {
     ui->setupUi(this);
 
+    this->setWindowTitle("MyGame");
     this->setStyleSheet(Utility::getStyleSheet(":/image/wndlogin.qss"));
 
     Init();
@@ -19,7 +21,22 @@ WndLogin::~WndLogin()
 
 void WndLogin::Init()
 {
-    ui->stackedWidget->setCurrentWidget(ui->sLogin);
+
+    QTimer *timer=new QTimer;
+    player = new QMediaPlayer;
+    videoWidget = new QVideoWidget();
+    player->setVideoOutput(videoWidget);
+    player->setSource(QUrl("qrc:/image/image/1000.mp4"));
+    this->setCentralWidget(videoWidget);
+    ui->verticalLayout_2->addWidget(videoWidget);
+    //ui->verticalLayout
+    //connect(player,&QMediaPlayer::durationChanged,this,&MainWindow::getduration);
+    videoWidget->show();
+    player->play();
+    connect(timer,&QTimer::timeout,this,[=](){
+        player->setPosition(0);
+    });
+    timer->start(179900);
 
     QAction *searchAction_0 = new QAction(ui->eAccount);
     searchAction_0->setIcon(QIcon(":/image/image/accountIcon.svg"));
@@ -74,7 +91,7 @@ bool WndLogin::isTrue()
     Archive archive;
 
     if(!archive.isLogin(thisaccount, thisPass)){
-        QMessageBox::information(NULL, "登录失败", "账号或密码错误或为空！！"); //警告乱码问题
+        QMessageBox::information(NULL, "登录失败", "用户或密码错误或为空！！"); //警告乱码问题
         return false;
     }
     return true;
@@ -89,7 +106,7 @@ bool WndLogin::isFix(const QString str1, const QString str2)
 
         UserDir.removeRecursively();
 
-        QMessageBox::information(NULL, "错误", "密码不能为空！！"); //警告乱码问题
+        QMessageBox::information(NULL,"错误","密码不能为空！！"); //警告乱码问题
 
         return false;
     }
@@ -161,7 +178,7 @@ void WndLogin::on_btnReg__clicked()
 bool WndLogin::isEmUser(const QString str)
 {
     if(str==nullptr){
-        QMessageBox::information(NULL, "错误", "账号不能为空！");     //警告乱码问题
+        QMessageBox::information(NULL,"错误","账号不能为空！");     //警告乱码问题
         return false;
     }
     QDir Findir("C:/MyGame/user/" + str);
@@ -189,9 +206,9 @@ bool WndLogin::isEmUser(const QString str)
 
 bool WndLogin::isTre()
 {
-    if(!(ui->eAccount_->text().length()<5 && ui->ePassword->text().length()<10))
+    if(!(ui->eAccount_->text().length()<5&&ui->ePassword->text().length()<10))
     {
-        QMessageBox::information(NULL,"错误","账号或密码违法长度！");     //警告乱码问题
+        QMessageBox::information(NULL,"错误","用户名或密码违法长度！");     //警告乱码问题
         ui->eAccount_->clear();
         ui->ePassword->clear();
         ui->ePassword_->clear();
@@ -211,6 +228,9 @@ void WndLogin::on_btnLogin_clicked()
 {
     if(isTrue() && ui->eAccount && ui->ePassword)
     {
+        player->stop();
+//        timer->stop();
+
         WndMain *a = new WndMain();
 
         a->show();
