@@ -3,6 +3,7 @@
 QString Archive::account = "";
 QString Archive::userName = "";
 QString Archive::headPath = "";
+QString Archive::password = "";
 
 Archive::Archive() {
 
@@ -102,6 +103,21 @@ void Archive::writeGameRecords()
     file.close();
 }
 
+void Archive::writeUserMessage()
+{
+    QFile file(PATH + Archive::account + "/" + Archive::account + ".txt");
+
+    file.open(QIODevice::WriteOnly);
+    QTextStream textStream(&file);
+    textStream.setEncoding(QStringConverter::Utf8);
+
+    textStream << Archive::userName << " " <<
+                  Archive::password << " " <<
+                  Archive::headPath;
+
+    file.close();
+}
+
 void Archive::readGameStorage()
 {
     QString fullPath = PATH + Archive::account + "/Game/" + _gameName;
@@ -188,6 +204,7 @@ bool Archive::isLogin(QString account, QString password)
     Archive::account = thisaccount;
     Archive::userName = userName;
     Archive::headPath = head;
+    Archive::password = pass;
 
     file.close();
 

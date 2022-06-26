@@ -44,9 +44,13 @@ public:
 
     void writeGameRecords();
 
+    void writeUserMessage();
+
     void readGameStorage();
 
     void readGameRecords();
+
+
 
     bool isLogin(QString account, QString password);
 
@@ -59,6 +63,8 @@ public:
     static QString account;
 
     static QString headPath;
+
+    static QString password;
 
 private:
 
