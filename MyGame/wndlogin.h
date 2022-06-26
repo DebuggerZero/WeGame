@@ -29,10 +29,6 @@ public:
     void Init();
     bool isTrue();
 
-private:
-    bool isFix(const QString str1,const QString str2);
-    bool isEmUser(const QString str);
-    bool isTre();
 private slots:
     void on_btnReg_clicked();
 
