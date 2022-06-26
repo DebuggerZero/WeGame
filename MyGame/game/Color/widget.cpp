@@ -186,7 +186,7 @@ bool Widget::check()//匹配颜色差
         ui->results->setText(QString::number(result,'f',2)+"%");
         ui->results->show();
         m_timer->start(1000);
-        if(m + 2 * (score + 1) >= 98) m = 98;
+        if(m + 2 * (score + 1) > 98) m = 99;
         else m += 2 * (score + 1);
         score++;
         ui->scores->display(QString::number(score));

@@ -19,6 +19,8 @@ WndLogin::~WndLogin()
 
 void WndLogin::Init()
 {
+    ui->stackedWidget->setCurrentWidget(ui->sLogin);
+
     QAction *searchAction_0 = new QAction(ui->eAccount);
     searchAction_0->setIcon(QIcon(":/image/image/accountIcon.svg"));
     ui->eAccount->addAction(searchAction_0,QLineEdit::LeadingPosition);

@@ -13,6 +13,8 @@ WndMain::WndMain(QWidget *parent)
 
     _isOpen = false;
 
+    ui->MainWindow->setCurrentWidget(ui->AllGame);
+
     this->setStyleSheet(Utility::getStyleSheet(":/image/wndmain.qss"));
 
     //2048游戏按钮
@@ -93,7 +95,6 @@ void WndMain::on_btnUser_clicked()
 
 void WndMain::on_btnHist_clicked()
 {
-    //emit ui->tabWidget->tabBarClicked(0);
     ui->MainWindow->setCurrentWidget(ui->History);
 }
 
