@@ -2,6 +2,7 @@
 
 QString Archive::account = "";
 QString Archive::userName = "";
+QString Archive::headPath = "";
 
 Archive::Archive() {
 
@@ -174,19 +175,44 @@ bool Archive::isLogin(QString account, QString password)
 
     file.open(QIODevice::ReadOnly);
 
-    QByteArray data = file.readAll();
-    const QString TrulyPass = QString(data);
-    QStringList s = TrulyPass.split(":");
-    Archive::userName = s.at(0);
-    Archive::account = thisaccount;
-    file.close();
+    QTextStream textStream(&file);
+    textStream.setEncoding(QStringConverter::Utf8);
 
-    if (thisPass == s.at(1)) {
-        return true;
-    }
-    else{
+    QString pass, userName, head;
+
+    textStream >> userName >> pass >> head;
+    if (thisPass != pass) {
         return false;
     }
+
+    Archive::account = thisaccount;
+    Archive::userName = userName;
+    Archive::headPath = head;
+
+    file.close();
+
+    return true;
+}
+
+bool Archive::isRegister(QString account, QString userName, QString password)
+{
+    QDir dir(PATH + account);
+    if (dir.exists()) return false;
+    if (account.length() > 5 || password.length() > 10) return false;
+
+    createDir(account);
+    QFile file(PATH + account + "/" + account + ".txt");
+
+    file.open(QIODevice::WriteOnly);
+    QTextStream textStream(&file);
+    textStream.setEncoding(QStringConverter::Utf8);
+
+    textStream << userName << " " <<
+                  password << " " <<
+                  ":/image/image/yuanpi.png";
+    file.close();
+
+    return true;
 }
 
 QVector<GameTime> Archive::getRecords()
