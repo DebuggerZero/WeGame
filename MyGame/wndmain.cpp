@@ -13,6 +13,8 @@ WndMain::WndMain(QWidget *parent)
 
     this->setStyleSheet(Utility::getStyleSheet(":/image/wndmain.qss"));
 
+    this->setAttribute(Qt::WA_DeleteOnClose);
+
     initWindows();
 }
 
@@ -272,8 +274,6 @@ void WndMain::initWindows()
     View_achievements->setIcon(QIcon(":/image/image/achiIcon.png"));
     View_records->setIcon(QIcon(":/image/image/histIcon.png"));
     //关联菜单项按钮和对应的槽函数
-
-//    connect(View_achievements, &QAction::triggered, this, &WndMain::doAction);
     //====================================================================================
 
     //====================================================================================
@@ -323,9 +323,55 @@ void WndMain::initWindows()
             Archive::headPath = path;
             ui->headPortraitLabel->setPixmap(Archive::headPath);
             QMessageBox::about(this, "提示", "头像上传成功...");
+            Archive archive;
+            archive.writeUserMessage();
         }
         else {
             QMessageBox::about(this, "提示", "未选择任何图片...");
         }
     });
+
+    connect(ui->btncnickname, &QPushButton::clicked, this, [=](){
+        bool ok;
+        QString name = QInputDialog::getText(this, "更改用户名", "请输入新的用户名：", QLineEdit::Normal, "", &ok);
+        if (ok) {
+            if (name.length() > 5) {
+                QMessageBox::about(this, "提示", "用户名过长(小于5)...");
+            }
+            else {
+                Archive::userName = name;
+                ui->UserNameLabel->setText(name);
+                QMessageBox::about(this, "提示", "用户名设置成功...");
+                Archive archive;
+                archive.writeUserMessage();
+            }
+        }
+    });
+
+    connect(ui->btncpassword, &QPushButton::clicked, this, [=](){
+        bool ok;
+        QString password = QInputDialog::getText(this, "更改密码", "请输入新的密码：", QLineEdit::Password, "", &ok);
+        if (ok) {
+            if (password.length() > 15) {
+                QMessageBox::about(this, "提示", "密码过长(小于15)...");
+            }
+            else {
+                Archive::password = password;
+                QMessageBox::about(this, "提示", "密码修改成功...");
+                Archive archive;
+                archive.writeUserMessage();
+            }
+        }
+    });
+
+    connect(ui->btnlogout, &QPushButton::clicked, this, [=](){
+        QString Path = "C:\\MyGame\\user\\" + Archive::account;
+        QDir dir(Path);
+        int result = QMessageBox::question(this, "提示", "是否注销账户，如果是将退出程序，并注销...");
+        if (result == QMessageBox::Yes){
+            dir.removeRecursively();
+            this->close();
+        }
+    });
+    //=========================================================================================================
 }

@@ -7,6 +7,7 @@
 #include <QMenu>
 #include <QAction>
 #include <QFileDialog>
+#include <QInputDialog>
 
 #include "game/2048/GameView/gamestartwindows.h"
 #include "game/Gobang/GameView/gstartwindow.h"
