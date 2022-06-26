@@ -286,7 +286,7 @@
     <string notr="true"/>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>4</number>
    </property>
    <widget class="QWidget" name="AllGame">
     <widget class="Line" name="line">
@@ -1035,7 +1035,7 @@ letter-spacing: 0px;
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>605</width>
+        <width>619</width>
         <height>637</height>
        </rect>
       </property>
