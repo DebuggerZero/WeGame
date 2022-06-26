@@ -21,6 +21,15 @@
         <file>image/accountIcon.svg</file>
         <file>image/passwordIcon.svg</file>
         <file>image/unameIcon.svg</file>
+        <file>image/yuanpi.png</file>
+        <file>image/my.png</file>
+        <file>image/20482.png</file>
+        <file>image/20481.png</file>
+        <file>image/snake2.png</file>
+        <file>image/snake1.png</file>
+        <file>image/colour2.png</file>
+        <file>image/colour1.png</file>
+        <file>image/gobang1.png</file>
     </qresource>
     <qresource prefix="/">
         <file>game/assets/2048/main/backGround.png</file>

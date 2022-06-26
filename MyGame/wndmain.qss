@@ -12,7 +12,7 @@ QLabel#label {
     height: 86px;
     top: 2px;
     left: 152px;
-    background: rgba(64, 71, 89, 0.67);
+
     border-radius: 5px;
 }
 

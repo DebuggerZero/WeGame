@@ -25,8 +25,11 @@
      <x>230</x>
      <y>-10</y>
      <width>811</width>
-     <height>131</height>
+     <height>120</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(99, 104, 119);</string>
    </property>
    <property name="text">
     <string/>
@@ -68,9 +71,9 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>230</y>
+     <y>200</y>
      <width>181</width>
-     <height>71</height>
+     <height>91</height>
     </rect>
    </property>
    <property name="cursor">
@@ -94,9 +97,9 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>350</y>
+     <y>330</y>
      <width>181</width>
-     <height>71</height>
+     <height>91</height>
     </rect>
    </property>
    <property name="cursor">
@@ -120,9 +123,9 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>470</y>
+     <y>460</y>
      <width>181</width>
-     <height>71</height>
+     <height>91</height>
     </rect>
    </property>
    <property name="cursor">
@@ -148,7 +151,7 @@
      <x>10</x>
      <y>590</y>
      <width>181</width>
-     <height>71</height>
+     <height>91</height>
     </rect>
    </property>
    <property name="cursor">
@@ -276,7 +279,7 @@
   <widget class="QStackedWidget" name="MainWindow">
    <property name="geometry">
     <rect>
-     <x>230</x>
+     <x>235</x>
      <y>110</y>
      <width>781</width>
      <height>631</height>
@@ -579,6 +582,14 @@ border-radius: 25px;</string>
        <height>36</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <family>Microsoft YaHei</family>
+       <pointsize>-1</pointsize>
+       <bold>true</bold>
+       <stylestrategy>PreferAntialias</stylestrategy>
+      </font>
+     </property>
      <property name="styleSheet">
       <string notr="true">
 position: absolute;
@@ -587,11 +598,9 @@ height: 24px;
 top: -255px;
 left: -432px;
 
-
 background: rgb(99, 104, 119);
-box-shadow: 0px 5px 100px rgba(0, 0, 0, 0.25);
 
-/* 五子棋 */
+
 position: absolute;
 width: 50px;
 height: 24px;
@@ -601,10 +610,12 @@ left: -419px;
 
 color: rgb(255, 255, 255);
 font-family: Microsoft YaHei;
-font-size: 11px;
+font-size: 14px;
 font-weight: 700;
 line-height: 18px;
 letter-spacing: 0px;
+
+
 </string>
      </property>
      <property name="text">
@@ -620,19 +631,26 @@ letter-spacing: 0px;
        <height>36</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <family>Microsoft YaHei</family>
+       <pointsize>-1</pointsize>
+       <bold>true</bold>
+       <stylestrategy>PreferAntialias</stylestrategy>
+      </font>
+     </property>
      <property name="styleSheet">
       <string notr="true">
+
 position: absolute;
 width: 71px;
 height: 24px;
 top: -255px;
 left: -432px;
 
-
 background: rgb(99, 104, 119);
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
-/* 五子棋 */
+
 position: absolute;
 width: 50px;
 height: 24px;
@@ -642,10 +660,12 @@ left: -419px;
 
 color: rgb(255, 255, 255);
 font-family: Microsoft YaHei;
-font-size: 11px;
+font-size: 14px;
 font-weight: 700;
 line-height: 18px;
 letter-spacing: 0px;
+
+
 </string>
      </property>
      <property name="text">
@@ -661,6 +681,14 @@ letter-spacing: 0px;
        <height>36</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <family>Microsoft YaHei</family>
+       <pointsize>-1</pointsize>
+       <bold>true</bold>
+       <stylestrategy>PreferAntialias</stylestrategy>
+      </font>
+     </property>
      <property name="styleSheet">
       <string notr="true">
 position: absolute;
@@ -669,11 +697,9 @@ height: 24px;
 top: -255px;
 left: -432px;
 
-
 background: rgb(99, 104, 119);
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
-/* 五子棋 */
+
 position: absolute;
 width: 50px;
 height: 24px;
@@ -683,10 +709,11 @@ left: -419px;
 
 color: rgb(255, 255, 255);
 font-family: Microsoft YaHei;
-font-size: 11px;
+font-size: 14px;
 font-weight: 700;
 line-height: 18px;
 letter-spacing: 0px;
+
 </string>
      </property>
      <property name="text">
@@ -845,6 +872,14 @@ text-align: left;
        <height>36</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <family>Microsoft YaHei</family>
+       <pointsize>-1</pointsize>
+       <bold>true</bold>
+       <stylestrategy>PreferAntialias</stylestrategy>
+      </font>
+     </property>
      <property name="styleSheet">
       <string notr="true">
 position: absolute;
@@ -854,9 +889,8 @@ top: -255px;
 left: -432px;
 
 background: rgb(99, 104, 119);
-box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
 
-/* 五子棋 */
+
 position: absolute;
 width: 50px;
 height: 24px;
@@ -866,7 +900,7 @@ left: -419px;
 
 color: rgb(255, 255, 255);
 font-family: Microsoft YaHei;
-font-size: 11px;
+font-size: 14px;
 font-weight: 700;
 line-height: 18px;
 letter-spacing: 0px;
@@ -952,27 +986,34 @@ letter-spacing: 0px;
     <widget class="QLabel" name="label_5">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>10</y>
-       <width>141</width>
-       <height>131</height>
+       <x>200</x>
+       <y>20</y>
+       <width>111</width>
+       <height>111</height>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">color: rgb(255, 255, 255);</string>
+      <string notr="true">color: rgb(255, 255, 255);
+image: url(:/image/image/yuanpi.png);</string>
      </property>
      <property name="text">
-      <string>头像</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLabel" name="label_6">
      <property name="geometry">
       <rect>
-       <x>180</x>
-       <y>100</y>
+       <x>340</x>
+       <y>80</y>
        <width>141</width>
        <height>41</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>16</pointsize>
+       <stylestrategy>PreferAntialias</stylestrategy>
+      </font>
      </property>
      <property name="styleSheet">
       <string notr="true">color: rgb(255, 255, 255);</string>
@@ -984,8 +1025,8 @@ letter-spacing: 0px;
     <widget class="Line" name="line_2">
      <property name="geometry">
       <rect>
-       <x>280</x>
-       <y>150</y>
+       <x>340</x>
+       <y>130</y>
        <width>351</width>
        <height>1</height>
       </rect>
@@ -1002,11 +1043,17 @@ letter-spacing: 0px;
     <widget class="QLabel" name="label_8">
      <property name="geometry">
       <rect>
-       <x>180</x>
-       <y>50</y>
+       <x>362</x>
+       <y>30</y>
        <width>141</width>
        <height>41</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>16</pointsize>
+       <stylestrategy>PreferAntialias</stylestrategy>
+      </font>
      </property>
      <property name="styleSheet">
       <string notr="true">color: rgb(255, 255, 255);</string>
@@ -1146,82 +1193,1574 @@ font-weight: 400
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>0</y>
-       <width>771</width>
-       <height>621</height>
-      </rect>
-     </property>
-     <property name="cursor">
-      <cursorShape>ArrowCursor</cursorShape>
-     </property>
-     <property name="tabShape">
-      <enum>QTabWidget::Rounded</enum>
-     </property>
-     <property name="currentIndex">
-      <number>2</number>
-     </property>
-     <property name="iconSize">
-      <size>
-       <width>20</width>
-       <height>20</height>
-      </size>
-     </property>
-     <property name="elideMode">
-      <enum>Qt::ElideMiddle</enum>
-     </property>
-     <property name="usesScrollButtons">
-      <bool>true</bool>
-     </property>
-     <widget class="QWidget" name="tcs_2">
-      <attribute name="title">
-       <string>五子棋</string>
-      </attribute>
-     </widget>
-     <widget class="QWidget" name="wzq_2">
-      <attribute name="title">
-       <string>贪吃蛇</string>
-      </attribute>
-     </widget>
-     <widget class="QWidget" name="tab_3">
-      <attribute name="title">
-       <string>2048</string>
-      </attribute>
-     </widget>
-     <widget class="QWidget" name="tab_4">
-      <attribute name="title">
-       <string>色彩达人</string>
-      </attribute>
-     </widget>
-    </widget>
-   </widget>
-   <widget class="QWidget" name="Instal">
-    <widget class="QPushButton" name="pushButton_6">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>90</y>
-       <width>93</width>
-       <height>29</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>换头像</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton_7">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>180</y>
-       <width>93</width>
-       <height>29</height>
+       <y>150</y>
+       <width>781</width>
+       <height>489</height>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">color: rgb(85, 255, 127);</string>
+      <string notr="true">background-image: url(:/image/image/my.png);</string>
      </property>
      <property name="text">
-      <string>改名</string>
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_16">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>164</y>
+       <width>71</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>16</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>NAME</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_17">
+     <property name="geometry">
+      <rect>
+       <x>427</x>
+       <y>164</y>
+       <width>91</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>16</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>SCORES</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_18">
+     <property name="geometry">
+      <rect>
+       <x>613</x>
+       <y>164</y>
+       <width>121</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>16</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>GAMETIME</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_19">
+     <property name="geometry">
+      <rect>
+       <x>225</x>
+       <y>164</y>
+       <width>81</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>16</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>GAME</string>
+     </property>
+    </widget>
+    <widget class="QListWidget" name="listWidget">
+     <property name="geometry">
+      <rect>
+       <x>8</x>
+       <y>200</y>
+       <width>133</width>
+       <height>421</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QListWidget" name="listWidget_2">
+     <property name="geometry">
+      <rect>
+       <x>149</x>
+       <y>200</y>
+       <width>218</width>
+       <height>421</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QListWidget" name="listWidget_3">
+     <property name="geometry">
+      <rect>
+       <x>375</x>
+       <y>200</y>
+       <width>189</width>
+       <height>421</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QListWidget" name="listWidget_4">
+     <property name="geometry">
+      <rect>
+       <x>572</x>
+       <y>200</y>
+       <width>200</width>
+       <height>421</height>
+      </rect>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="achieve">
+    <widget class="QPushButton" name="gobangRecordButton_2">
+     <property name="geometry">
+      <rect>
+       <x>260</x>
+       <y>85</y>
+       <width>81</width>
+       <height>36</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Microsoft YaHei</family>
+       <pointsize>-1</pointsize>
+       <bold>true</bold>
+       <stylestrategy>PreferAntialias</stylestrategy>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+
+position: absolute;
+width: 71px;
+height: 24px;
+top: -255px;
+left: -432px;
+
+background: rgb(99, 104, 119);
+
+
+position: absolute;
+width: 50px;
+height: 24px;
+top: -253px;
+left: -419px;
+
+
+color: rgb(255, 255, 255);
+font-family: Microsoft YaHei;
+font-size: 14px;
+font-weight: 700;
+line-height: 18px;
+letter-spacing: 0px;
+
+
+</string>
+     </property>
+     <property name="text">
+      <string>五子棋</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="snakeRecordButton_2">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>85</y>
+       <width>81</width>
+       <height>36</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Microsoft YaHei</family>
+       <pointsize>-1</pointsize>
+       <bold>true</bold>
+       <stylestrategy>PreferAntialias</stylestrategy>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+position: absolute;
+width: 71px;
+height: 24px;
+top: -255px;
+left: -432px;
+
+background: rgb(99, 104, 119);
+
+
+position: absolute;
+width: 50px;
+height: 24px;
+top: -253px;
+left: -419px;
+
+
+color: rgb(255, 255, 255);
+font-family: Microsoft YaHei;
+font-size: 14px;
+font-weight: 700;
+line-height: 18px;
+letter-spacing: 0px;
+
+
+</string>
+     </property>
+     <property name="text">
+      <string>贪吃蛇</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="tzfeRecordButton_2">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>85</y>
+       <width>81</width>
+       <height>36</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Microsoft YaHei</family>
+       <pointsize>-1</pointsize>
+       <bold>true</bold>
+       <stylestrategy>PreferAntialias</stylestrategy>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+position: absolute;
+width: 71px;
+height: 24px;
+top: -255px;
+left: -432px;
+
+background: rgb(99, 104, 119);
+
+
+position: absolute;
+width: 50px;
+height: 24px;
+top: -253px;
+left: -419px;
+
+
+color: rgb(255, 255, 255);
+font-family: Microsoft YaHei;
+font-size: 14px;
+font-weight: 700;
+line-height: 18px;
+letter-spacing: 0px;
+
+
+</string>
+     </property>
+     <property name="text">
+      <string>2048</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="colorRecordButton_4">
+     <property name="geometry">
+      <rect>
+       <x>360</x>
+       <y>85</y>
+       <width>81</width>
+       <height>36</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Microsoft YaHei</family>
+       <pointsize>-1</pointsize>
+       <bold>true</bold>
+       <stylestrategy>PreferAntialias</stylestrategy>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+position: absolute;
+width: 71px;
+height: 24px;
+top: -255px;
+left: -432px;
+
+background: rgb(99, 104, 119);
+
+
+position: absolute;
+width: 50px;
+height: 24px;
+top: -253px;
+left: -419px;
+
+
+color: rgb(255, 255, 255);
+font-family: Microsoft YaHei;
+font-size: 14px;
+font-weight: 700;
+line-height: 18px;
+letter-spacing: 0px;
+
+</string>
+     </property>
+     <property name="text">
+      <string>色彩达人</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_26">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>40</y>
+       <width>121</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+
+color: rgb(250, 190, 0);
+font-family: Noto Sans SC;
+font-size: 28px;
+
+font-weight: 1000;
+</string>
+     </property>
+     <property name="text">
+      <string>我的成就</string>
+     </property>
+    </widget>
+    <widget class="QStackedWidget" name="stackedWidget">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>140</y>
+       <width>691</width>
+       <height>461</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="currentIndex">
+      <number>3</number>
+     </property>
+     <widget class="QWidget" name="page_3">
+      <widget class="QLabel" name="label_45">
+       <property name="geometry">
+        <rect>
+         <x>560</x>
+         <y>70</y>
+         <width>41</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>状态：</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_38">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>200</y>
+         <width>120</width>
+         <height>120</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">image: url(:/image/image/20482.png);
+border: 3px solid rgb(147, 150, 157);
+
+border-radius: 4px;
+</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_41">
+       <property name="geometry">
+        <rect>
+         <x>610</x>
+         <y>70</y>
+         <width>51</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+         <stylestrategy>PreferAntialias</stylestrategy>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 0, 0)</string>
+       </property>
+       <property name="text">
+        <string>未获取</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_39">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>30</y>
+         <width>120</width>
+         <height>120</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">image: url(:/image/image/20481.png);
+border: 3px solid rgb(147, 150, 157);
+
+border-radius: 4px;
+</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_44">
+       <property name="geometry">
+        <rect>
+         <x>560</x>
+         <y>250</y>
+         <width>41</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>状态：</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_40">
+       <property name="geometry">
+        <rect>
+         <x>610</x>
+         <y>250</y>
+         <width>51</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+         <stylestrategy>PreferAntialias</stylestrategy>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 0, 0)</string>
+       </property>
+       <property name="text">
+        <string>未获取</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_43">
+       <property name="geometry">
+        <rect>
+         <x>610</x>
+         <y>100</y>
+         <width>51</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+         <stylestrategy>PreferAntialias</stylestrategy>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(0, 255, 0)</string>
+       </property>
+       <property name="text">
+        <string>已获取</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_37">
+       <property name="geometry">
+        <rect>
+         <x>210</x>
+         <y>60</y>
+         <width>301</width>
+         <height>61</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>18</pointsize>
+         <stylestrategy>PreferAntialias</stylestrategy>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 255, 255);
+border: 3px solid rgb(147, 150, 157);
+
+border-radius: 4px;
+</string>
+       </property>
+       <property name="text">
+        <string>在游戏中合成一次2048！！</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_42">
+       <property name="geometry">
+        <rect>
+         <x>210</x>
+         <y>230</y>
+         <width>301</width>
+         <height>61</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>18</pointsize>
+         <stylestrategy>PreferAntialias</stylestrategy>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 255, 255);
+border: 3px solid rgb(147, 150, 157);
+
+border-radius: 4px;
+</string>
+       </property>
+       <property name="text">
+        <string>游玩时长累计达到86400秒</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_46">
+       <property name="geometry">
+        <rect>
+         <x>310</x>
+         <y>30</y>
+         <width>91</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+         <underline>true</underline>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(250, 248, 239);</string>
+       </property>
+       <property name="text">
+        <string>真正的2048</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_47">
+       <property name="geometry">
+        <rect>
+         <x>310</x>
+         <y>200</y>
+         <width>91</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+         <underline>true</underline>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(250, 248, 239);</string>
+       </property>
+       <property name="text">
+        <string>时间的朋友</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="page">
+      <widget class="QLabel" name="label_28">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>30</y>
+         <width>120</width>
+         <height>120</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">image: url(:/image/image/snake1.png);
+border: 3px solid rgb(147, 150, 157);
+
+border-radius: 4px;
+</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_29">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>200</y>
+         <width>120</width>
+         <height>120</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">image: url(:/image/image/snake2.png);
+border: 3px solid rgb(147, 150, 157);
+
+border-radius: 4px;
+</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_30">
+       <property name="geometry">
+        <rect>
+         <x>210</x>
+         <y>60</y>
+         <width>301</width>
+         <height>61</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>18</pointsize>
+         <stylestrategy>PreferAntialias</stylestrategy>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 255, 255);
+border: 3px solid rgb(147, 150, 157);
+
+border-radius: 4px;
+</string>
+       </property>
+       <property name="text">
+        <string>在游戏中达到100分</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_31">
+       <property name="geometry">
+        <rect>
+         <x>210</x>
+         <y>230</y>
+         <width>301</width>
+         <height>61</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>18</pointsize>
+         <stylestrategy>PreferAntialias</stylestrategy>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 255, 255);
+border: 3px solid rgb(147, 150, 157);
+
+border-radius: 4px;
+</string>
+       </property>
+       <property name="text">
+        <string>超过20次最好记录</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_32">
+       <property name="geometry">
+        <rect>
+         <x>560</x>
+         <y>70</y>
+         <width>41</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>状态：</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_33">
+       <property name="geometry">
+        <rect>
+         <x>560</x>
+         <y>250</y>
+         <width>41</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>状态：</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_34">
+       <property name="geometry">
+        <rect>
+         <x>610</x>
+         <y>70</y>
+         <width>51</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+         <stylestrategy>PreferAntialias</stylestrategy>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 0, 0)</string>
+       </property>
+       <property name="text">
+        <string>未获取</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_35">
+       <property name="geometry">
+        <rect>
+         <x>610</x>
+         <y>250</y>
+         <width>51</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+         <stylestrategy>PreferAntialias</stylestrategy>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 0, 0)</string>
+       </property>
+       <property name="text">
+        <string>未获取</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_48">
+       <property name="geometry">
+        <rect>
+         <x>290</x>
+         <y>30</y>
+         <width>131</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+         <underline>true</underline>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(250, 248, 239);</string>
+       </property>
+       <property name="text">
+        <string>你就是新的捍胃者</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_49">
+       <property name="geometry">
+        <rect>
+         <x>320</x>
+         <y>200</y>
+         <width>71</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+         <underline>true</underline>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(250, 248, 239);</string>
+       </property>
+       <property name="text">
+        <string>不断突破</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="page_4">
+      <widget class="QLabel" name="label_50">
+       <property name="geometry">
+        <rect>
+         <x>560</x>
+         <y>70</y>
+         <width>41</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>状态：</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_51">
+       <property name="geometry">
+        <rect>
+         <x>610</x>
+         <y>70</y>
+         <width>51</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+         <stylestrategy>PreferAntialias</stylestrategy>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 0, 0)</string>
+       </property>
+       <property name="text">
+        <string>未获取</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_52">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>200</y>
+         <width>120</width>
+         <height>120</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">image: url(:/image/image/20482.png);
+border: 3px solid rgb(147, 150, 157);
+
+border-radius: 4px;
+</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_53">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>30</y>
+         <width>120</width>
+         <height>120</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">image: url(:/image/image/gobang1.png);
+border: 3px solid rgb(147, 150, 157);
+
+border-radius: 4px;
+</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_54">
+       <property name="geometry">
+        <rect>
+         <x>560</x>
+         <y>250</y>
+         <width>41</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>状态：</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_55">
+       <property name="geometry">
+        <rect>
+         <x>610</x>
+         <y>250</y>
+         <width>51</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+         <stylestrategy>PreferAntialias</stylestrategy>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 0, 0)</string>
+       </property>
+       <property name="text">
+        <string>未获取</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_56">
+       <property name="geometry">
+        <rect>
+         <x>210</x>
+         <y>60</y>
+         <width>301</width>
+         <height>61</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>18</pointsize>
+         <stylestrategy>PreferAntialias</stylestrategy>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 255, 255);
+border: 3px solid rgb(147, 150, 157);
+
+border-radius: 4px;
+</string>
+       </property>
+       <property name="text">
+        <string>进行5场激烈的对局</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_57">
+       <property name="geometry">
+        <rect>
+         <x>320</x>
+         <y>30</y>
+         <width>71</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+         <underline>true</underline>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(250, 248, 239);</string>
+       </property>
+       <property name="text">
+        <string>棋艺大师</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_58">
+       <property name="geometry">
+        <rect>
+         <x>210</x>
+         <y>230</y>
+         <width>301</width>
+         <height>61</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>18</pointsize>
+         <stylestrategy>PreferAntialias</stylestrategy>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 255, 255);
+border: 3px solid rgb(147, 150, 157);
+
+border-radius: 4px;
+</string>
+       </property>
+       <property name="text">
+        <string>游玩时长累计达到86400秒</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_59">
+       <property name="geometry">
+        <rect>
+         <x>310</x>
+         <y>200</y>
+         <width>91</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+         <underline>true</underline>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(250, 248, 239);</string>
+       </property>
+       <property name="text">
+        <string>时间的朋友</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="page_2">
+      <widget class="QLabel" name="label_60">
+       <property name="geometry">
+        <rect>
+         <x>210</x>
+         <y>60</y>
+         <width>301</width>
+         <height>61</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>18</pointsize>
+         <stylestrategy>PreferAntialias</stylestrategy>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 255, 255);
+border: 3px solid rgb(147, 150, 157);
+
+border-radius: 4px;
+</string>
+       </property>
+       <property name="text">
+        <string>在简单模式下达到6分</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_61">
+       <property name="geometry">
+        <rect>
+         <x>610</x>
+         <y>70</y>
+         <width>51</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+         <stylestrategy>PreferAntialias</stylestrategy>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 0, 0)</string>
+       </property>
+       <property name="text">
+        <string>未获取</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_62">
+       <property name="geometry">
+        <rect>
+         <x>560</x>
+         <y>250</y>
+         <width>41</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>状态：</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_63">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>200</y>
+         <width>120</width>
+         <height>120</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">image: url(:/image/image/colour1.png);
+border: 3px solid rgb(147, 150, 157);
+
+border-radius: 4px;
+</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_64">
+       <property name="geometry">
+        <rect>
+         <x>560</x>
+         <y>70</y>
+         <width>41</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>状态：</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_65">
+       <property name="geometry">
+        <rect>
+         <x>320</x>
+         <y>30</y>
+         <width>71</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+         <underline>true</underline>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(250, 248, 239);</string>
+       </property>
+       <property name="text">
+        <string>初识色彩</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_66">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>30</y>
+         <width>120</width>
+         <height>120</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">image: url(:/image/image/colour2.png);
+border: 3px solid rgb(147, 150, 157);
+
+border-radius: 4px;
+</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_67">
+       <property name="geometry">
+        <rect>
+         <x>610</x>
+         <y>250</y>
+         <width>51</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+         <stylestrategy>PreferAntialias</stylestrategy>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 0, 0)</string>
+       </property>
+       <property name="text">
+        <string>未获取</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_68">
+       <property name="geometry">
+        <rect>
+         <x>320</x>
+         <y>200</y>
+         <width>71</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+         <underline>true</underline>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(250, 248, 239);</string>
+       </property>
+       <property name="text">
+        <string>色彩精通</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_69">
+       <property name="geometry">
+        <rect>
+         <x>210</x>
+         <y>230</y>
+         <width>301</width>
+         <height>61</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>18</pointsize>
+         <stylestrategy>PreferAntialias</stylestrategy>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 255, 255);
+border: 3px solid rgb(147, 150, 157);
+
+border-radius: 4px;
+</string>
+       </property>
+       <property name="text">
+        <string>在困难模式下达到9分</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QLabel" name="label_27">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>130</y>
+       <width>711</width>
+       <height>481</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+border: 3px solid rgb(250, 190, 0);
+
+border-radius: 10px;
+</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <zorder>gobangRecordButton_2</zorder>
+    <zorder>snakeRecordButton_2</zorder>
+    <zorder>tzfeRecordButton_2</zorder>
+    <zorder>colorRecordButton_4</zorder>
+    <zorder>label_26</zorder>
+    <zorder>label_27</zorder>
+    <zorder>stackedWidget</zorder>
+   </widget>
+   <widget class="QWidget" name="Instal">
+    <widget class="QPushButton" name="btnchead">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>140</y>
+       <width>121</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+background: rgb(147, 150, 157);
+border: 3px solid rgb(250, 190, 0);
+
+border-radius: 10px;
+
+color: rgb(255, 255, 255);
+font-family: Noto Sans SC;
+font-size: 16px;
+letter-spacing: -1px;
+font-weight: 700;
+line-height: 24px;
+text-align: center;</string>
+     </property>
+     <property name="text">
+      <string>更换头像</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btncnickname">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>250</y>
+       <width>121</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+background: rgb(147, 150, 157);
+border: 3px solid rgb(250, 190, 0);
+
+border-radius: 10px;
+
+color: rgb(255, 255, 255);
+font-family: Noto Sans SC;
+font-size: 16px;
+letter-spacing: -1px;
+font-weight: 700;
+line-height: 24px;
+text-align: center;</string>
+     </property>
+     <property name="text">
+      <string>更改昵称</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnlogout">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>470</y>
+       <width>121</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+background: rgb(147, 150, 157);
+border: 3px solid rgb(250, 190, 0);
+
+border-radius: 10px;
+
+color: rgb(255, 255, 255);
+font-family: Noto Sans SC;
+font-size: 16px;
+letter-spacing: -1px;
+font-weight: 700;
+line-height: 24px;
+text-align: center;</string>
+     </property>
+     <property name="text">
+      <string>注销账号</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btncpassword">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>360</y>
+       <width>121</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+background: rgb(147, 150, 157);
+border: 3px solid rgb(250, 190, 0);
+
+border-radius: 10px;
+
+color: rgb(255, 255, 255);
+font-family: Noto Sans SC;
+font-size: 16px;
+letter-spacing: -1px;
+font-weight: 700;
+line-height: 24px;
+text-align: center;</string>
+     </property>
+     <property name="text">
+      <string>修改密码</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_20">
+     <property name="geometry">
+      <rect>
+       <x>93</x>
+       <y>70</y>
+       <width>121</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+
+color: rgb(250, 190, 0);
+font-family: Noto Sans SC;
+font-size: 28px;
+
+font-weight: 1000;
+</string>
+     </property>
+     <property name="text">
+      <string>设置中心</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_21">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>150</y>
+       <width>371</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+
+
+border: 1px solid rgb(147, 150, 157);
+border-radius: 2px;</string>
+     </property>
+     <property name="text">
+      <string>更换您的个性头像以展示您的风采（需要本地文件）</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_22">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>250</y>
+       <width>371</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+
+
+border: 1px solid rgb(147, 150, 157);
+border-radius: 2px;</string>
+     </property>
+     <property name="text">
+      <string>更改您的游戏昵称，将会在&quot;我的&quot;-&quot;记录排行榜&quot;中
+被展示</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_23">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>370</y>
+       <width>221</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+
+
+border: 1px solid rgb(147, 150, 157);
+border-radius: 2px;</string>
+     </property>
+     <property name="text">
+      <string>修改您的密码以保护您的账号</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_24">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>480</y>
+       <width>221</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+       <underline>false</underline>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+
+
+border: 1px solid rgb(147, 150, 157);
+border-radius: 2px;</string>
+     </property>
+     <property name="text">
+      <string>永久删除您的账号及游戏记录</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_25">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>480</y>
+       <width>221</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+       <underline>true</underline>
+      </font>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+
+color: rgb(251, 0, 0);
+border: 1px solid rgb(147, 150, 157);
+border-radius: 2px;</string>
+     </property>
+     <property name="text">
+      <string>永久</string>
      </property>
     </widget>
    </widget>
@@ -1300,45 +2839,41 @@ background-color: rgb(147, 150, 157);
   <widget class="QLabel" name="label_14">
    <property name="geometry">
     <rect>
-     <x>230</x>
-     <y>10</y>
-     <width>351</width>
+     <x>290</x>
+     <y>30</y>
+     <width>511</width>
      <height>41</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <pointsize>16</pointsize>
-     <bold>true</bold>
+     <family>Microsoft JhengHei UI</family>
+     <pointsize>-1</pointsize>
+     <bold>false</bold>
+     <stylestrategy>PreferAntialias</stylestrategy>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: rgb(250, 190, 0);</string>
+    <string notr="true">
+position: absolute;
+width: 521px;
+height: 84px;
+top: -596px;
+left: 180px;
+
+
+color: rgb(250, 190, 0);
+font-family: Microsoft JhengHei UI;
+font-size: 48px;
+font-weight: 400;
+line-height: 61px;
+letter-spacing: 0px;
+text-align: left;
+
+</string>
    </property>
    <property name="text">
-    <string>       当前用户：</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_15">
-   <property name="geometry">
-    <rect>
-     <x>230</x>
-     <y>60</y>
-     <width>351</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>16</pointsize>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color: rgb(250, 190, 0);</string>
-   </property>
-   <property name="text">
-    <string>       游玩时长：</string>
+    <string>Game   Starts   Here  ！</string>
    </property>
   </widget>
  </widget>
