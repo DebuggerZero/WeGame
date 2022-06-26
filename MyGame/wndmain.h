@@ -61,6 +61,8 @@ private:
 
     bool _isOpen;
 
+    void initWindows();
+
 //    std::function<void(void)> openGame;
 };
 #endif // WNDMAIN_H

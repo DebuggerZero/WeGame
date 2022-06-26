@@ -228,9 +228,6 @@ void WndLogin::on_btnLogin_clicked()
 {
     if(isTrue() && ui->eAccount && ui->ePassword)
     {
-        player->stop();
-//        timer->stop();
-
         WndMain *a = new WndMain();
 
         a->show();

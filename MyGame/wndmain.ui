@@ -1159,10 +1159,10 @@ image: url(:/image/image/yuanpi.png);</string>
       <string notr="true">color: rgb(255, 255, 255);</string>
      </property>
      <property name="text">
-      <string>GAME</string>
+      <string>NUMBER</string>
      </property>
     </widget>
-    <widget class="QListWidget" name="listWidget">
+    <widget class="QListWidget" name="nameList">
      <property name="geometry">
       <rect>
        <x>8</x>
@@ -1172,7 +1172,7 @@ image: url(:/image/image/yuanpi.png);</string>
       </rect>
      </property>
     </widget>
-    <widget class="QListWidget" name="listWidget_2">
+    <widget class="QListWidget" name="numberList_2">
      <property name="geometry">
       <rect>
        <x>149</x>
@@ -1182,7 +1182,7 @@ image: url(:/image/image/yuanpi.png);</string>
       </rect>
      </property>
     </widget>
-    <widget class="QListWidget" name="listWidget_3">
+    <widget class="QListWidget" name="scoreList_2">
      <property name="geometry">
       <rect>
        <x>375</x>
@@ -1192,7 +1192,7 @@ image: url(:/image/image/yuanpi.png);</string>
       </rect>
      </property>
     </widget>
-    <widget class="QListWidget" name="listWidget_4">
+    <widget class="QListWidget" name="gameTimeList">
      <property name="geometry">
       <rect>
        <x>572</x>
@@ -1352,7 +1352,7 @@ letter-spacing: 0px;
       <string>2048</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="colorRecordButton_4">
+    <widget class="QPushButton" name="colorRecordButton_2">
      <property name="geometry">
       <rect>
        <x>360</x>
@@ -1423,7 +1423,7 @@ font-weight: 1000;
       <string>我的成就</string>
      </property>
     </widget>
-    <widget class="QStackedWidget" name="stackedWidget">
+    <widget class="QStackedWidget" name="achieveWidget">
      <property name="geometry">
       <rect>
        <x>50</x>
@@ -1436,9 +1436,9 @@ font-weight: 1000;
       <string notr="true"/>
      </property>
      <property name="currentIndex">
-      <number>3</number>
+      <number>2</number>
      </property>
-     <widget class="QWidget" name="page_3">
+     <widget class="QWidget" name="tzfeAchieve">
       <widget class="QLabel" name="label_45">
        <property name="geometry">
         <rect>
@@ -1680,7 +1680,7 @@ border-radius: 4px;
        </property>
       </widget>
      </widget>
-     <widget class="QWidget" name="page">
+     <widget class="QWidget" name="snakeAchieve">
       <widget class="QLabel" name="label_28">
        <property name="geometry">
         <rect>
@@ -1900,7 +1900,7 @@ border-radius: 4px;
        </property>
       </widget>
      </widget>
-     <widget class="QWidget" name="page_4">
+     <widget class="QWidget" name="gobangAchieve">
       <widget class="QLabel" name="label_50">
        <property name="geometry">
         <rect>
@@ -2120,7 +2120,7 @@ border-radius: 4px;
        </property>
       </widget>
      </widget>
-     <widget class="QWidget" name="page_2">
+     <widget class="QWidget" name="colorAchieve">
       <widget class="QLabel" name="label_60">
        <property name="geometry">
         <rect>
@@ -2364,10 +2364,10 @@ border-radius: 10px;
     <zorder>gobangRecordButton_2</zorder>
     <zorder>snakeRecordButton_2</zorder>
     <zorder>tzfeRecordButton_2</zorder>
-    <zorder>colorRecordButton_4</zorder>
+    <zorder>colorRecordButton_2</zorder>
     <zorder>label_26</zorder>
     <zorder>label_27</zorder>
-    <zorder>stackedWidget</zorder>
+    <zorder>achieveWidget</zorder>
    </widget>
    <widget class="QWidget" name="Instal">
     <widget class="QPushButton" name="btnchead">

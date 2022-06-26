@@ -11,66 +11,9 @@ WndMain::WndMain(QWidget *parent)
 
     this->setWindowFlag(Qt::FramelessWindowHint);
 
-    _isOpen = false;
-
-    ui->MainWindow->setCurrentWidget(ui->AllGame);
-
     this->setStyleSheet(Utility::getStyleSheet(":/image/wndmain.qss"));
 
-    //2048游戏按钮
-    connect(ui->TZFE, &QPushButton::clicked, this, &WndMain::openTZFE);
-
-    //五子棋游戏按钮
-    connect(ui->Gobang, &QPushButton::clicked, this, &WndMain::openGobang);
-
-    //贪吃蛇游戏按钮
-    connect(ui->Snake, &QPushButton::clicked, this, &WndMain::openSnake);
-
-    //color游戏按钮
-    connect(ui->color, &QPushButton::clicked, this, &WndMain::openColor);
-
-    connect(ui->comingsoom, &QPushButton::clicked, this, [=](){
-        QMessageBox::about(this, "提示", "新游戏正在开发中，敬请期待...");
-    });
-
-    //记录
-    connect(ui->tzfeRecordButton, &QPushButton::clicked, this, [=](){
-        showList("2048");
-    });
-
-    connect(ui->snakeRecordButton, &QPushButton::clicked, this, [=](){
-        showList("贪吃蛇");
-    });
-
-    connect(ui->gobangRecordButton, &QPushButton::clicked, this, [=](){
-        showList("五子棋");
-    });
-
-    connect(ui->colorRecordButton, &QPushButton::clicked, this, [=](){
-        showList("色彩达人");
-    });
-
-    m_rightClieckMenu = new QMenu(this);
-    //设置菜单样式
-
-    /**************************************/
-    //创建菜单项
-    m_openAction = new QAction("打开",this);
-    View_achievements = new QAction("查看成就",this);
-    View_records = new QAction("查看记录",this);
-
-    //将创建好的菜单项加入到菜单中
-    m_rightClieckMenu->addAction(m_openAction);
-    m_rightClieckMenu->addAction(View_achievements);
-    m_rightClieckMenu->addAction(View_records);
-
-    m_openAction->setIcon(QIcon(":/image/image/gameIcon.png"));
-    View_achievements->setIcon(QIcon(":/image/image/achiIcon.png"));
-    View_records->setIcon(QIcon(":/image/image/histIcon.png"));
-    //关联菜单项按钮和对应的槽函数
-
-    connect(View_records, &QAction::triggered, this, &WndMain::doAction);
-    connect(View_achievements, &QAction::triggered, this, &WndMain::doAction);
+    initWindows();
 }
 
 WndMain::~WndMain()
@@ -91,6 +34,44 @@ void WndMain::on_btnAchieve_clicked()
 void WndMain::on_btnUser_clicked()
 {
     ui->MainWindow->setCurrentWidget(ui->User);
+
+    ui->nameList->clear();
+    ui->numberList_2->clear();
+    ui->scoreList_2->clear();
+    ui->gameTimeList->clear();
+
+    ui->UserNameLabel->setText("UserName：" + Archive::userName);
+    ui->AccountLabel->setText("Account：" + Archive::account);
+
+    ui->nameList->addItem("2048");
+    ui->nameList->addItem("五子棋");
+    ui->nameList->addItem("贪吃蛇");
+    ui->nameList->addItem("色彩达人");
+
+    Archive gobangRecord("五子棋");
+    gobangRecord.readGameStorage();
+    Archive snakeRecord("贪吃蛇");
+    snakeRecord.readGameStorage();
+    Archive tzfeRecord("2048");
+    tzfeRecord.readGameStorage();
+    Archive colorRecord("色彩达人");
+    colorRecord.readGameStorage();
+
+    ui->numberList_2->addItem(QString::number(tzfeRecord.getNumber()));
+    ui->numberList_2->addItem(QString::number(gobangRecord.getNumber()));
+    ui->numberList_2->addItem(QString::number(snakeRecord.getNumber()));
+    ui->numberList_2->addItem(QString::number(colorRecord.getNumber()));
+
+    ui->scoreList_2->addItem(QString::number(tzfeRecord.getBestScore()));
+    ui->scoreList_2->addItem("-");
+    ui->scoreList_2->addItem(QString::number(snakeRecord.getBestScore()));
+    ui->scoreList_2->addItem(QString::number(colorRecord.getBestScore()));
+
+    ui->gameTimeList->addItem(QString::number(tzfeRecord.getGameTime() / 1000) + " s");
+    ui->gameTimeList->addItem(QString::number(gobangRecord.getGameTime() / 1000) + " s");
+    ui->gameTimeList->addItem(QString::number(snakeRecord.getGameTime() / 1000) + " s");
+    ui->gameTimeList->addItem(QString::number(colorRecord.getGameTime() / 1000) + " s");
+
 }
 
 void WndMain::on_btnHist_clicked()
@@ -210,6 +191,94 @@ void WndMain::openColor()
         gameWidget->show();
         this->hide();
     }
+}
+
+void WndMain::initWindows()
+{
+    _isOpen = false;
+
+    ui->MainWindow->setCurrentWidget(ui->AllGame);
+
+    //===================================================================================
+    //游戏界面按钮事件
+
+    //2048游戏按钮
+    connect(ui->TZFE, &QPushButton::clicked, this, &WndMain::openTZFE);
+
+    //五子棋游戏按钮
+    connect(ui->Gobang, &QPushButton::clicked, this, &WndMain::openGobang);
+
+    //贪吃蛇游戏按钮
+    connect(ui->Snake, &QPushButton::clicked, this, &WndMain::openSnake);
+
+    //color游戏按钮
+    connect(ui->color, &QPushButton::clicked, this, &WndMain::openColor);
+
+    connect(ui->comingsoom, &QPushButton::clicked, this, [=](){
+        QMessageBox::about(this, "提示", "新游戏正在开发中，敬请期待...");
+    });
+
+    m_rightClieckMenu = new QMenu(this);
+    //设置菜单样式
+    /**************************************/
+    //创建菜单项
+    m_openAction = new QAction("打开",this);
+    View_achievements = new QAction("查看成就",this);
+    View_records = new QAction("查看记录",this);
+
+    //将创建好的菜单项加入到菜单中
+    m_rightClieckMenu->addAction(m_openAction);
+    m_rightClieckMenu->addAction(View_achievements);
+    m_rightClieckMenu->addAction(View_records);
+
+    m_openAction->setIcon(QIcon(":/image/image/gameIcon.png"));
+    View_achievements->setIcon(QIcon(":/image/image/achiIcon.png"));
+    View_records->setIcon(QIcon(":/image/image/histIcon.png"));
+    //关联菜单项按钮和对应的槽函数
+
+    connect(View_records, &QAction::triggered, this, &WndMain::doAction);
+    connect(View_achievements, &QAction::triggered, this, &WndMain::doAction);
+    //====================================================================================
+
+    //====================================================================================
+    //记录界面按钮事件======================================================================
+    //记录
+    connect(ui->tzfeRecordButton, &QPushButton::clicked, this, [=](){
+        showList("2048");
+    });
+
+    connect(ui->snakeRecordButton, &QPushButton::clicked, this, [=](){
+        showList("贪吃蛇");
+    });
+
+    connect(ui->gobangRecordButton, &QPushButton::clicked, this, [=](){
+        showList("五子棋");
+    });
+
+    connect(ui->colorRecordButton, &QPushButton::clicked, this, [=](){
+        showList("色彩达人");
+    });
+    //====================================================================================
+
+    //====================================================================================
+    //成就界面按钮事件
+    connect(ui->gobangRecordButton_2, &QPushButton::clicked, this, [=](){
+        ui->achieveWidget->setCurrentWidget(ui->gobangAchieve);
+    });
+
+    connect(ui->tzfeRecordButton_2, &QPushButton::clicked, this, [=](){
+        ui->achieveWidget->setCurrentWidget(ui->tzfeAchieve);
+    });
+
+    connect(ui->snakeRecordButton_2, &QPushButton::clicked, this, [=](){
+        ui->achieveWidget->setCurrentWidget(ui->snakeAchieve);
+    });
+
+    connect(ui->colorRecordButton_2, &QPushButton::clicked, this, [=](){
+        ui->achieveWidget->setCurrentWidget(ui->colorAchieve);
+    });
+    //====================================================================================
+
 }
 
 void WndMain::doAction()			//doAction()是一个槽函数
