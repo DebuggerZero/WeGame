@@ -289,7 +289,7 @@
     <string notr="true"/>
    </property>
    <property name="currentIndex">
-    <number>4</number>
+    <number>3</number>
    </property>
    <widget class="QWidget" name="AllGame">
     <widget class="Line" name="line">
@@ -983,7 +983,7 @@ letter-spacing: 0px;
     <zorder>endTimeList</zorder>
    </widget>
    <widget class="QWidget" name="User">
-    <widget class="QLabel" name="label_5">
+    <widget class="QLabel" name="headPortraitLabel">
      <property name="geometry">
       <rect>
        <x>200</x>
@@ -1000,12 +1000,12 @@ image: url(:/image/image/yuanpi.png);</string>
       <string/>
      </property>
     </widget>
-    <widget class="QLabel" name="label_6">
+    <widget class="QLabel" name="UserNameLabel">
      <property name="geometry">
       <rect>
        <x>340</x>
-       <y>80</y>
-       <width>141</width>
+       <y>30</y>
+       <width>231</width>
        <height>41</height>
       </rect>
      </property>
@@ -1040,12 +1040,12 @@ image: url(:/image/image/yuanpi.png);</string>
       <enum>Qt::Horizontal</enum>
      </property>
     </widget>
-    <widget class="QLabel" name="label_8">
+    <widget class="QLabel" name="AccountLabel">
      <property name="geometry">
       <rect>
        <x>362</x>
-       <y>30</y>
-       <width>141</width>
+       <y>80</y>
+       <width>191</width>
        <height>41</height>
       </rect>
      </property>
