@@ -303,10 +303,6 @@ void WndMain::initWindows()
     });
 
     connect(_ui->tzfeRecordButton_2, &QPushButton::clicked, this, [=](){
-        Archive archive("2048");
-        if (archive.getGameTime() >= 86400) {
-            _ui->label_40->setText("以获得");
-        }
         _ui->achieveWidget->setCurrentWidget(_ui->tzfeAchieve);
     });
 

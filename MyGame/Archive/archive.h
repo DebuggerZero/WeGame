@@ -50,8 +50,6 @@ public:
 
     void readGameRecords();
 
-
-
     bool isLogin(QString account, QString password);
 
     bool isRegister(QString account, QString userName, QString password);
