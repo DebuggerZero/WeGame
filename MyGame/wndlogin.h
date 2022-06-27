@@ -39,10 +39,10 @@ private slots:
     void on_btnLogin_clicked();
 
 private:
-    Ui::WndLogin *_ui;
-    QMediaPlayer *_player;
-    QVideoWidget *_videoWidget;
-    QTimer *_timer;
+    Ui::WndLogin        *_ui;
+    QMediaPlayer        *_player;
+    QVideoWidget        *_videoWidget;
+    QTimer              *_timer;
 };
 
 #endif // WNDLOGIN_H

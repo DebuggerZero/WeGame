@@ -1,7 +1,6 @@
 ﻿#include "wndlogin.h"
 #include "ui_wndlogin.h"
 
-
 WndLogin::WndLogin(QMainWindow *parent) :
     QMainWindow(parent),
     _ui(new Ui::WndLogin)

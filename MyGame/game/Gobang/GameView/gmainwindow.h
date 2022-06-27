@@ -13,7 +13,7 @@
 
 #include "game/Gobang/piece.h"
 #include "game/Utility/utility.h"
-#include "Archive/archive.h"
+#include "archive/archive.h"
 
 namespace Ui {
 class GMainWindow;

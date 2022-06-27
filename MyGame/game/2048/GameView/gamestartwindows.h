@@ -9,7 +9,7 @@
 
 #include "game/2048/GameView/gamemainwindows.h"
 #include "game/Utility/utility.h"
-#include "Archive/archive.h"
+#include "archive/archive.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class GameStartWindows; }
