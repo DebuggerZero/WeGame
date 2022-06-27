@@ -11,7 +11,7 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    Archive/archive.cpp \
+    archive/archive.cpp \
     game/2048/GameRule/rule.cpp \
     game/2048/GameView/gamemainwindows.cpp \
     game/2048/GameView/gamestartwindows.cpp \
@@ -32,7 +32,7 @@ SOURCES += \
     wndmain.cpp
 
 HEADERS += \
-    Archive/archive.h \
+    archive/archive.h \
     game/2048/GameRule/rule.h \
     game/2048/GameView/gamemainwindows.h \
     game/2048/GameView/gamestartwindows.h \

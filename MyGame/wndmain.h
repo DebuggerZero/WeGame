@@ -61,7 +61,7 @@ private slots:
     void openColor();
 
 private:
-    Ui::WndMain *ui;
+    Ui::WndMain *_ui;
 
     bool _isOpen;
 

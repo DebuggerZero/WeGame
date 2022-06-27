@@ -5,9 +5,9 @@
 
 WndMain::WndMain(QWidget *parent)
     : QWidget(parent)
-    , ui(new Ui::WndMain)
+    , _ui(new Ui::WndMain)
 {
-    ui->setupUi(this);
+    _ui->setupUi(this);
 
     this->setWindowFlag(Qt::FramelessWindowHint);
 
@@ -20,35 +20,35 @@ WndMain::WndMain(QWidget *parent)
 
 WndMain::~WndMain()
 {
-    delete ui;
+    delete _ui;
 }
 
 void WndMain::on_btnGame_clicked()
 {
-    ui->MainWindow->setCurrentWidget(ui->AllGame);
+    _ui->MainWindow->setCurrentWidget(_ui->AllGame);
 }
 
 void WndMain::on_btnAchieve_clicked()
 {
-    ui->MainWindow->setCurrentWidget(ui->achieve);
+    _ui->MainWindow->setCurrentWidget(_ui->achieve);
 }
 
 void WndMain::on_btnUser_clicked()
 {
-    ui->MainWindow->setCurrentWidget(ui->User);
+    _ui->MainWindow->setCurrentWidget(_ui->User);
 
-    ui->nameList->clear();
-    ui->numberList_2->clear();
-    ui->scoreList_2->clear();
-    ui->gameTimeList->clear();
+    _ui->nameList->clear();
+    _ui->numberList_2->clear();
+    _ui->scoreList_2->clear();
+    _ui->gameTimeList->clear();
 
-    ui->UserNameLabel->setText("UserName：" + Archive::userName);
-    ui->AccountLabel->setText("Account：" + Archive::account);
+    _ui->UserNameLabel->setText("UserName：" + Archive::userName);
+    _ui->AccountLabel->setText("Account：" + Archive::account);
 
-    ui->nameList->addItem("2048");
-    ui->nameList->addItem("五子棋");
-    ui->nameList->addItem("贪吃蛇");
-    ui->nameList->addItem("色彩达人");
+    _ui->nameList->addItem("2048");
+    _ui->nameList->addItem("五子棋");
+    _ui->nameList->addItem("贪吃蛇");
+    _ui->nameList->addItem("色彩达人");
 
     Archive gobangRecord("五子棋");
     gobangRecord.readGameStorage();
@@ -59,31 +59,31 @@ void WndMain::on_btnUser_clicked()
     Archive colorRecord("色彩达人");
     colorRecord.readGameStorage();
 
-    ui->numberList_2->addItem(QString::number(tzfeRecord.getNumber()));
-    ui->numberList_2->addItem(QString::number(gobangRecord.getNumber()));
-    ui->numberList_2->addItem(QString::number(snakeRecord.getNumber()));
-    ui->numberList_2->addItem(QString::number(colorRecord.getNumber()));
+    _ui->numberList_2->addItem(QString::number(tzfeRecord.getNumber()));
+    _ui->numberList_2->addItem(QString::number(gobangRecord.getNumber()));
+    _ui->numberList_2->addItem(QString::number(snakeRecord.getNumber()));
+    _ui->numberList_2->addItem(QString::number(colorRecord.getNumber()));
 
-    ui->scoreList_2->addItem(QString::number(tzfeRecord.getBestScore()));
-    ui->scoreList_2->addItem("-");
-    ui->scoreList_2->addItem(QString::number(snakeRecord.getBestScore()));
-    ui->scoreList_2->addItem(QString::number(colorRecord.getBestScore()));
+    _ui->scoreList_2->addItem(QString::number(tzfeRecord.getBestScore()));
+    _ui->scoreList_2->addItem("-");
+    _ui->scoreList_2->addItem(QString::number(snakeRecord.getBestScore()));
+    _ui->scoreList_2->addItem(QString::number(colorRecord.getBestScore()));
 
-    ui->gameTimeList->addItem(QString::number(tzfeRecord.getGameTime() / 1000) + " s");
-    ui->gameTimeList->addItem(QString::number(gobangRecord.getGameTime() / 1000) + " s");
-    ui->gameTimeList->addItem(QString::number(snakeRecord.getGameTime() / 1000) + " s");
-    ui->gameTimeList->addItem(QString::number(colorRecord.getGameTime() / 1000) + " s");
+    _ui->gameTimeList->addItem(QString::number(tzfeRecord.getGameTime() / 1000) + " s");
+    _ui->gameTimeList->addItem(QString::number(gobangRecord.getGameTime() / 1000) + " s");
+    _ui->gameTimeList->addItem(QString::number(snakeRecord.getGameTime() / 1000) + " s");
+    _ui->gameTimeList->addItem(QString::number(colorRecord.getGameTime() / 1000) + " s");
 
 }
 
 void WndMain::on_btnHist_clicked()
 {
-    ui->MainWindow->setCurrentWidget(ui->History);
+    _ui->MainWindow->setCurrentWidget(_ui->History);
 }
 
 void WndMain::on_btnInstal_clicked()
 {
-    ui->MainWindow->setCurrentWidget(ui->Instal);
+    _ui->MainWindow->setCurrentWidget(_ui->Instal);
 }
 
 void WndMain::on_btnDwi_clicked()
@@ -103,51 +103,51 @@ void WndMain::contextMenuEvent(QContextMenuEvent *event)
     View_records->disconnect();
     View_achievements->disconnect();
 
-    if (ui->TZFE->underMouse()) {
+    if (_ui->TZFE->underMouse()) {
         connect(m_openAction, &QAction::triggered, this, &WndMain::openTZFE);
         connect(View_records, &QAction::triggered, this, [=](){
-            ui->MainWindow->setCurrentWidget(ui->History);
+            _ui->MainWindow->setCurrentWidget(_ui->History);
             showList("2048");
         });
         connect(View_achievements, &QAction::triggered, this, [=](){
-            ui->MainWindow->setCurrentWidget(ui->achieve);
-            ui->achieveWidget->setCurrentWidget(ui->tzfeAchieve);
+            _ui->MainWindow->setCurrentWidget(_ui->achieve);
+            _ui->achieveWidget->setCurrentWidget(_ui->tzfeAchieve);
         });
         m_rightClieckMenu->exec(event->globalPos());
     }
-    else if (ui->Snake->underMouse()) {
+    else if (_ui->Snake->underMouse()) {
         connect(m_openAction, &QAction::triggered, this, &WndMain::openSnake);
         connect(View_records, &QAction::triggered, this, [=](){
-            ui->MainWindow->setCurrentWidget(ui->History);
+            _ui->MainWindow->setCurrentWidget(_ui->History);
             showList("贪吃蛇");
         });
         connect(View_achievements, &QAction::triggered, this, [=](){
-            ui->MainWindow->setCurrentWidget(ui->achieve);
-            ui->achieveWidget->setCurrentWidget(ui->snakeAchieve);
+            _ui->MainWindow->setCurrentWidget(_ui->achieve);
+            _ui->achieveWidget->setCurrentWidget(_ui->snakeAchieve);
         });
         m_rightClieckMenu->exec(event->globalPos());
     }
-    else if (ui->Gobang->underMouse()) {
+    else if (_ui->Gobang->underMouse()) {
         connect(m_openAction, &QAction::triggered, this, &WndMain::openGobang);
         connect(View_records, &QAction::triggered, this, [=](){
-            ui->MainWindow->setCurrentWidget(ui->History);
+            _ui->MainWindow->setCurrentWidget(_ui->History);
             showList("五子棋");
         });
         connect(View_achievements, &QAction::triggered, this, [=](){
-            ui->MainWindow->setCurrentWidget(ui->achieve);
-            ui->achieveWidget->setCurrentWidget(ui->gobangAchieve);
+            _ui->MainWindow->setCurrentWidget(_ui->achieve);
+            _ui->achieveWidget->setCurrentWidget(_ui->gobangAchieve);
         });
         m_rightClieckMenu->exec(event->globalPos());
     }
-    else if (ui->color->underMouse()) {
+    else if (_ui->color->underMouse()) {
         connect(m_openAction, &QAction::triggered, this, &WndMain::openColor);
         connect(View_records, &QAction::triggered, this, [=](){
-            ui->MainWindow->setCurrentWidget(ui->History);
+            _ui->MainWindow->setCurrentWidget(_ui->History);
             showList("色彩达人");
         });
         connect(View_achievements, &QAction::triggered, this, [=](){
-            ui->MainWindow->setCurrentWidget(ui->achieve);
-            ui->achieveWidget->setCurrentWidget(ui->colorAchieve);
+            _ui->MainWindow->setCurrentWidget(_ui->achieve);
+            _ui->achieveWidget->setCurrentWidget(_ui->colorAchieve);
         });
         m_rightClieckMenu->exec(event->globalPos());
     }
@@ -168,14 +168,14 @@ void WndMain::showList(QString gameName)
         startTimeLists.append(record.startTime);
         endTimeLists.append(record.endTime);
     }
-    ui->numberList->clear();
-    ui->numberList->addItems(numberLists);
-    ui->scoreList->clear();
-    ui->scoreList->addItems(scoreLists);
-    ui->startTimeList->clear();
-    ui->startTimeList->addItems(startTimeLists);
-    ui->endTimeList->clear();
-    ui->endTimeList->addItems(endTimeLists);
+    _ui->numberList->clear();
+    _ui->numberList->addItems(numberLists);
+    _ui->scoreList->clear();
+    _ui->scoreList->addItems(scoreLists);
+    _ui->startTimeList->clear();
+    _ui->startTimeList->addItems(startTimeLists);
+    _ui->endTimeList->clear();
+    _ui->endTimeList->addItems(endTimeLists);
 }
 
 void WndMain::openTZFE()
@@ -234,26 +234,26 @@ void WndMain::initWindows()
 {
     _isOpen = false;
 
-    ui->headPortraitLabel->setPixmap(Archive::headPath);
+    _ui->headPortraitLabel->setPixmap(Archive::headPath);
 
-    ui->MainWindow->setCurrentWidget(ui->AllGame);
+    _ui->MainWindow->setCurrentWidget(_ui->AllGame);
 
     //===================================================================================
     //游戏界面按钮事件
 
     //2048游戏按钮
-    connect(ui->TZFE, &QPushButton::clicked, this, &WndMain::openTZFE);
+    connect(_ui->TZFE, &QPushButton::clicked, this, &WndMain::openTZFE);
 
     //五子棋游戏按钮
-    connect(ui->Gobang, &QPushButton::clicked, this, &WndMain::openGobang);
+    connect(_ui->Gobang, &QPushButton::clicked, this, &WndMain::openGobang);
 
     //贪吃蛇游戏按钮
-    connect(ui->Snake, &QPushButton::clicked, this, &WndMain::openSnake);
+    connect(_ui->Snake, &QPushButton::clicked, this, &WndMain::openSnake);
 
     //color游戏按钮
-    connect(ui->color, &QPushButton::clicked, this, &WndMain::openColor);
+    connect(_ui->color, &QPushButton::clicked, this, &WndMain::openColor);
 
-    connect(ui->comingsoom, &QPushButton::clicked, this, [=](){
+    connect(_ui->comingsoom, &QPushButton::clicked, this, [=](){
         QMessageBox::about(this, "提示", "新游戏正在开发中，敬请期待...");
     });
 
@@ -279,49 +279,49 @@ void WndMain::initWindows()
     //====================================================================================
     //记录界面按钮事件======================================================================
     //记录
-    connect(ui->tzfeRecordButton, &QPushButton::clicked, this, [=](){
+    connect(_ui->tzfeRecordButton, &QPushButton::clicked, this, [=](){
         showList("2048");
     });
 
-    connect(ui->snakeRecordButton, &QPushButton::clicked, this, [=](){
+    connect(_ui->snakeRecordButton, &QPushButton::clicked, this, [=](){
         showList("贪吃蛇");
     });
 
-    connect(ui->gobangRecordButton, &QPushButton::clicked, this, [=](){
+    connect(_ui->gobangRecordButton, &QPushButton::clicked, this, [=](){
         showList("五子棋");
     });
 
-    connect(ui->colorRecordButton, &QPushButton::clicked, this, [=](){
+    connect(_ui->colorRecordButton, &QPushButton::clicked, this, [=](){
         showList("色彩达人");
     });
     //====================================================================================
 
     //====================================================================================
     //成就界面按钮事件
-    connect(ui->gobangRecordButton_2, &QPushButton::clicked, this, [=](){
-        ui->achieveWidget->setCurrentWidget(ui->gobangAchieve);
+    connect(_ui->gobangRecordButton_2, &QPushButton::clicked, this, [=](){
+        _ui->achieveWidget->setCurrentWidget(_ui->gobangAchieve);
     });
 
-    connect(ui->tzfeRecordButton_2, &QPushButton::clicked, this, [=](){
-        ui->achieveWidget->setCurrentWidget(ui->tzfeAchieve);
+    connect(_ui->tzfeRecordButton_2, &QPushButton::clicked, this, [=](){
+        _ui->achieveWidget->setCurrentWidget(_ui->tzfeAchieve);
     });
 
-    connect(ui->snakeRecordButton_2, &QPushButton::clicked, this, [=](){
-        ui->achieveWidget->setCurrentWidget(ui->snakeAchieve);
+    connect(_ui->snakeRecordButton_2, &QPushButton::clicked, this, [=](){
+        _ui->achieveWidget->setCurrentWidget(_ui->snakeAchieve);
     });
 
-    connect(ui->colorRecordButton_2, &QPushButton::clicked, this, [=](){
-        ui->achieveWidget->setCurrentWidget(ui->colorAchieve);
+    connect(_ui->colorRecordButton_2, &QPushButton::clicked, this, [=](){
+        _ui->achieveWidget->setCurrentWidget(_ui->colorAchieve);
     });
     //====================================================================================
 
     //====================================================================================
     //设置按钮事件
-    connect(ui->btnchead, &QPushButton::clicked, this, [=](){
+    connect(_ui->btnchead, &QPushButton::clicked, this, [=](){
         QString path = QFileDialog::getOpenFileName(this, tr("Open File"), ".", tr("TextFiles(*.png, *.jpg)"));
         if (path != "") {
             Archive::headPath = path;
-            ui->headPortraitLabel->setPixmap(Archive::headPath);
+            _ui->headPortraitLabel->setPixmap(Archive::headPath);
             QMessageBox::about(this, "提示", "头像上传成功...");
             Archive archive;
             archive.writeUserMessage();
@@ -331,7 +331,7 @@ void WndMain::initWindows()
         }
     });
 
-    connect(ui->btncnickname, &QPushButton::clicked, this, [=](){
+    connect(_ui->btncnickname, &QPushButton::clicked, this, [=](){
         bool ok;
         QString name = QInputDialog::getText(this, "更改用户名", "请输入新的用户名：", QLineEdit::Normal, "", &ok);
         if (ok) {
@@ -340,7 +340,7 @@ void WndMain::initWindows()
             }
             else {
                 Archive::userName = name;
-                ui->UserNameLabel->setText(name);
+                _ui->UserNameLabel->setText(name);
                 QMessageBox::about(this, "提示", "用户名设置成功...");
                 Archive archive;
                 archive.writeUserMessage();
@@ -348,7 +348,7 @@ void WndMain::initWindows()
         }
     });
 
-    connect(ui->btncpassword, &QPushButton::clicked, this, [=](){
+    connect(_ui->btncpassword, &QPushButton::clicked, this, [=](){
         bool ok;
         QString password = QInputDialog::getText(this, "更改密码", "请输入新的密码：", QLineEdit::Password, "", &ok);
         if (ok) {
@@ -364,7 +364,7 @@ void WndMain::initWindows()
         }
     });
 
-    connect(ui->btnlogout, &QPushButton::clicked, this, [=](){
+    connect(_ui->btnlogout, &QPushButton::clicked, this, [=](){
         QString Path = "C:\\MyGame\\user\\" + Archive::account;
         QDir dir(Path);
         int result = QMessageBox::question(this, "提示", "是否注销账户，如果是将退出程序，并注销...");
