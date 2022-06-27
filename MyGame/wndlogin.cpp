@@ -64,23 +64,23 @@ void WndLogin::Init()
     QPalette wrong_1;
     wrong_1.setColor(QPalette::PlaceholderText,QColor(127,127,127));
     _ui->eUers->setPalette(wrong_1);
-    _ui->eUers->setPlaceholderText(QString("输入用户名："));
+    _ui->eUers->setPlaceholderText(QString("输入用户名"));
 
     QPalette wrong_2;
     wrong_2.setColor(QPalette::PlaceholderText,QColor(127,127,127));
     _ui->ePassword_->setPalette(wrong_2);
-    _ui->ePassword_->setPlaceholderText(QString("输入密码："));
+    _ui->ePassword_->setPlaceholderText(QString("输入密码"));
 
 
     QPalette wrong_3;
     wrong_3.setColor(QPalette::PlaceholderText,QColor(127,127,127));
     _ui->eAccount_->setPalette(wrong_3);
-    _ui->eUers->setPlaceholderText(QString("输入账号："));
+    _ui->eUers->setPlaceholderText(QString("输入账号"));
 
     QPalette wrong_4;
     wrong_4.setColor(QPalette::PlaceholderText,QColor(127,127,127));
     _ui->ePassword_->setPalette(wrong_4);
-    _ui->ePassword_->setPlaceholderText(QString("确认密码："));
+    _ui->ePassword_->setPlaceholderText(QString("确认密码"));
 }
 
 bool WndLogin::isTrue()
