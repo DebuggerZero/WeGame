@@ -12,7 +12,7 @@
 #include <QFont>
 #include <QPainter>
 
-#include "Archive/archive.h"
+#include "archive/archive.h"
 #include "color.h"
 
 QT_BEGIN_NAMESPACE

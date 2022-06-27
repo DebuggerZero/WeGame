@@ -44,17 +44,25 @@ public:
 
     void writeGameRecords();
 
+    void writeUserMessage();
+
     void readGameStorage();
 
     void readGameRecords();
 
     bool isLogin(QString account, QString password);
 
+    bool isRegister(QString account, QString userName, QString password);
+
     QVector<struct GameTime> getRecords();
 
     static QString userName;
 
     static QString account;
+
+    static QString headPath;
+
+    static QString password;
 
 private:
 
@@ -67,7 +75,9 @@ private:
     QDateTime _endTime;
 
     int _bestScore;
+
     int _number;
+
     long _gameTime;
 
     const QString PATH = "C:/MyGame/user/";

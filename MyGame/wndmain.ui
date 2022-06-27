@@ -19,6 +19,10 @@
   <property name="windowTitle">
    <string>GameWidget</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="imandqss.qrc">
+    <normaloff>:/image/image/logo.png</normaloff>:/image/image/logo.png</iconset>
+  </property>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
@@ -289,7 +293,7 @@
     <string notr="true"/>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>3</number>
    </property>
    <widget class="QWidget" name="AllGame">
     <widget class="Line" name="line">
@@ -393,9 +397,9 @@ color: rgb(255, 255, 255)
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>420</y>
+       <y>430</y>
        <width>691</width>
-       <height>211</height>
+       <height>161</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -411,7 +415,7 @@ background: transparent; </string>
         <x>0</x>
         <y>0</y>
         <width>689</width>
-        <height>209</height>
+        <height>159</height>
        </rect>
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout">
@@ -536,8 +540,12 @@ border-radius: 25px;</string>
            <height>100</height>
           </size>
          </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
          <property name="styleSheet">
-          <string notr="true">image: url(:/image/image/comingsoon.png);</string>
+          <string notr="true">border-radius: 25px;
+border-image: url(:/image/image/chess1.png);</string>
          </property>
          <property name="text">
           <string/>
@@ -571,6 +579,146 @@ border-radius: 25px;</string>
       <pixmap resource="imandqss.qrc">:/image/image/2.png</pixmap>
      </property>
     </widget>
+    <widget class="QLabel" name="label_36">
+     <property name="geometry">
+      <rect>
+       <x>490</x>
+       <y>590</y>
+       <width>301</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Microsoft JhengHei UI</family>
+       <pointsize>-1</pointsize>
+       <bold>false</bold>
+       <stylestrategy>PreferAntialias</stylestrategy>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+position: absolute;
+width: 521px;
+height: 84px;
+top: -596px;
+left: 180px;
+
+
+color: rgb(250, 190, 0);
+font-family: Microsoft JhengHei UI;
+font-size: 20px;
+font-weight: 400;
+line-height: 61px;
+letter-spacing: 0px;
+text-align: left;
+
+</string>
+     </property>
+     <property name="text">
+      <string>更多游戏正在开发中 . . .</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_5">
+     <property name="geometry">
+      <rect>
+       <x>82</x>
+       <y>440</y>
+       <width>54</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Microsoft YaHei UI</family>
+       <pointsize>11</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>2048</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_6">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>440</y>
+       <width>54</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Microsoft YaHei UI</family>
+       <pointsize>11</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>贪吃蛇</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_8">
+     <property name="geometry">
+      <rect>
+       <x>340</x>
+       <y>440</y>
+       <width>54</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Microsoft YaHei UI</family>
+       <pointsize>11</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>五子棋</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_43">
+     <property name="geometry">
+      <rect>
+       <x>466</x>
+       <y>440</y>
+       <width>61</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Microsoft YaHei UI</family>
+       <pointsize>11</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>色彩达人</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_70">
+     <property name="geometry">
+      <rect>
+       <x>597</x>
+       <y>440</y>
+       <width>62</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Microsoft YaHei UI</family>
+       <pointsize>11</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>国际象棋</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QWidget" name="History">
     <widget class="QPushButton" name="snakeRecordButton">
@@ -589,6 +737,9 @@ border-radius: 25px;</string>
        <bold>true</bold>
        <stylestrategy>PreferAntialias</stylestrategy>
       </font>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
      </property>
      <property name="styleSheet">
       <string notr="true">
@@ -639,6 +790,9 @@ letter-spacing: 0px;
        <stylestrategy>PreferAntialias</stylestrategy>
       </font>
      </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
      <property name="styleSheet">
       <string notr="true">
 
@@ -688,6 +842,9 @@ letter-spacing: 0px;
        <bold>true</bold>
        <stylestrategy>PreferAntialias</stylestrategy>
       </font>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
      </property>
      <property name="styleSheet">
       <string notr="true">
@@ -880,6 +1037,9 @@ text-align: left;
        <stylestrategy>PreferAntialias</stylestrategy>
       </font>
      </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
      <property name="styleSheet">
       <string notr="true">
 position: absolute;
@@ -968,6 +1128,57 @@ letter-spacing: 0px;
       </rect>
      </property>
     </widget>
+    <widget class="QPushButton" name="chessButton_2">
+     <property name="geometry">
+      <rect>
+       <x>410</x>
+       <y>0</y>
+       <width>81</width>
+       <height>36</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Microsoft YaHei</family>
+       <pointsize>-1</pointsize>
+       <bold>true</bold>
+       <stylestrategy>PreferAntialias</stylestrategy>
+      </font>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+position: absolute;
+width: 71px;
+height: 24px;
+top: -255px;
+left: -432px;
+
+background: rgb(99, 104, 119);
+
+
+position: absolute;
+width: 50px;
+height: 24px;
+top: -253px;
+left: -419px;
+
+
+color: rgb(255, 255, 255);
+font-family: Microsoft YaHei;
+font-size: 14px;
+font-weight: 700;
+line-height: 18px;
+letter-spacing: 0px;
+
+</string>
+     </property>
+     <property name="text">
+      <string>国际象棋</string>
+     </property>
+    </widget>
     <zorder>label_9</zorder>
     <zorder>gobangRecordButton</zorder>
     <zorder>colorRecordButton</zorder>
@@ -981,9 +1192,10 @@ letter-spacing: 0px;
     <zorder>scoreList</zorder>
     <zorder>startTimeList</zorder>
     <zorder>endTimeList</zorder>
+    <zorder>chessButton_2</zorder>
    </widget>
    <widget class="QWidget" name="User">
-    <widget class="QLabel" name="label_5">
+    <widget class="QLabel" name="headPortraitLabel">
      <property name="geometry">
       <rect>
        <x>200</x>
@@ -993,19 +1205,18 @@ letter-spacing: 0px;
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">color: rgb(255, 255, 255);
-image: url(:/image/image/yuanpi.png);</string>
+      <string notr="true">color: rgb(255, 255, 255);</string>
      </property>
      <property name="text">
       <string/>
      </property>
     </widget>
-    <widget class="QLabel" name="label_6">
+    <widget class="QLabel" name="UserNameLabel">
      <property name="geometry">
       <rect>
        <x>340</x>
-       <y>80</y>
-       <width>141</width>
+       <y>30</y>
+       <width>231</width>
        <height>41</height>
       </rect>
      </property>
@@ -1040,12 +1251,12 @@ image: url(:/image/image/yuanpi.png);</string>
       <enum>Qt::Horizontal</enum>
      </property>
     </widget>
-    <widget class="QLabel" name="label_8">
+    <widget class="QLabel" name="AccountLabel">
      <property name="geometry">
       <rect>
        <x>362</x>
-       <y>30</y>
-       <width>141</width>
+       <y>80</y>
+       <width>191</width>
        <height>41</height>
       </rect>
      </property>
@@ -1159,10 +1370,10 @@ image: url(:/image/image/yuanpi.png);</string>
       <string notr="true">color: rgb(255, 255, 255);</string>
      </property>
      <property name="text">
-      <string>GAME</string>
+      <string>NUMBER</string>
      </property>
     </widget>
-    <widget class="QListWidget" name="listWidget">
+    <widget class="QListWidget" name="nameList">
      <property name="geometry">
       <rect>
        <x>8</x>
@@ -1172,7 +1383,7 @@ image: url(:/image/image/yuanpi.png);</string>
       </rect>
      </property>
     </widget>
-    <widget class="QListWidget" name="listWidget_2">
+    <widget class="QListWidget" name="numberList_2">
      <property name="geometry">
       <rect>
        <x>149</x>
@@ -1182,7 +1393,7 @@ image: url(:/image/image/yuanpi.png);</string>
       </rect>
      </property>
     </widget>
-    <widget class="QListWidget" name="listWidget_3">
+    <widget class="QListWidget" name="scoreList_2">
      <property name="geometry">
       <rect>
        <x>375</x>
@@ -1192,7 +1403,7 @@ image: url(:/image/image/yuanpi.png);</string>
       </rect>
      </property>
     </widget>
-    <widget class="QListWidget" name="listWidget_4">
+    <widget class="QListWidget" name="gameTimeList">
      <property name="geometry">
       <rect>
        <x>572</x>
@@ -1220,6 +1431,9 @@ image: url(:/image/image/yuanpi.png);</string>
        <bold>true</bold>
        <stylestrategy>PreferAntialias</stylestrategy>
       </font>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
      </property>
      <property name="styleSheet">
       <string notr="true">
@@ -1271,6 +1485,9 @@ letter-spacing: 0px;
        <stylestrategy>PreferAntialias</stylestrategy>
       </font>
      </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
      <property name="styleSheet">
       <string notr="true">
 position: absolute;
@@ -1320,6 +1537,9 @@ letter-spacing: 0px;
        <stylestrategy>PreferAntialias</stylestrategy>
       </font>
      </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
      <property name="styleSheet">
       <string notr="true">
 position: absolute;
@@ -1352,7 +1572,7 @@ letter-spacing: 0px;
       <string>2048</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="colorRecordButton_4">
+    <widget class="QPushButton" name="colorRecordButton_2">
      <property name="geometry">
       <rect>
        <x>360</x>
@@ -1368,6 +1588,9 @@ letter-spacing: 0px;
        <bold>true</bold>
        <stylestrategy>PreferAntialias</stylestrategy>
       </font>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
      </property>
      <property name="styleSheet">
       <string notr="true">
@@ -1423,7 +1646,7 @@ font-weight: 1000;
       <string>我的成就</string>
      </property>
     </widget>
-    <widget class="QStackedWidget" name="stackedWidget">
+    <widget class="QStackedWidget" name="achieveWidget">
      <property name="geometry">
       <rect>
        <x>50</x>
@@ -1436,9 +1659,9 @@ font-weight: 1000;
       <string notr="true"/>
      </property>
      <property name="currentIndex">
-      <number>3</number>
+      <number>4</number>
      </property>
-     <widget class="QWidget" name="page_3">
+     <widget class="QWidget" name="tzfeAchieve">
       <widget class="QLabel" name="label_45">
        <property name="geometry">
         <rect>
@@ -1561,28 +1784,6 @@ border-radius: 4px;
         <string>未获取</string>
        </property>
       </widget>
-      <widget class="QLabel" name="label_43">
-       <property name="geometry">
-        <rect>
-         <x>610</x>
-         <y>100</y>
-         <width>51</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>11</pointsize>
-         <stylestrategy>PreferAntialias</stylestrategy>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: rgb(0, 255, 0)</string>
-       </property>
-       <property name="text">
-        <string>已获取</string>
-       </property>
-      </widget>
       <widget class="QLabel" name="label_37">
        <property name="geometry">
         <rect>
@@ -1680,7 +1881,7 @@ border-radius: 4px;
        </property>
       </widget>
      </widget>
-     <widget class="QWidget" name="page">
+     <widget class="QWidget" name="snakeAchieve">
       <widget class="QLabel" name="label_28">
        <property name="geometry">
         <rect>
@@ -1900,7 +2101,7 @@ border-radius: 4px;
        </property>
       </widget>
      </widget>
-     <widget class="QWidget" name="page_4">
+     <widget class="QWidget" name="gobangAchieve">
       <widget class="QLabel" name="label_50">
        <property name="geometry">
         <rect>
@@ -2120,7 +2321,7 @@ border-radius: 4px;
        </property>
       </widget>
      </widget>
-     <widget class="QWidget" name="page_2">
+     <widget class="QWidget" name="colorAchieve">
       <widget class="QLabel" name="label_60">
        <property name="geometry">
         <rect>
@@ -2340,6 +2541,182 @@ border-radius: 4px;
        </property>
       </widget>
      </widget>
+     <widget class="QWidget" name="page">
+      <widget class="QLabel" name="label_71">
+       <property name="geometry">
+        <rect>
+         <x>610</x>
+         <y>250</y>
+         <width>51</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+         <stylestrategy>PreferAntialias</stylestrategy>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 0, 0)</string>
+       </property>
+       <property name="text">
+        <string>未获取</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_72">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>200</y>
+         <width>120</width>
+         <height>120</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">image: url(:/image/image/20482.png);
+border: 3px solid rgb(147, 150, 157);
+
+border-radius: 4px;
+</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_73">
+       <property name="geometry">
+        <rect>
+         <x>560</x>
+         <y>70</y>
+         <width>41</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>状态：</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_74">
+       <property name="geometry">
+        <rect>
+         <x>610</x>
+         <y>70</y>
+         <width>51</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+         <stylestrategy>PreferAntialias</stylestrategy>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 0, 0)</string>
+       </property>
+       <property name="text">
+        <string>未获取</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_75">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>30</y>
+         <width>120</width>
+         <height>120</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">image: url(:/image/image/chess2.png);
+border: 3px solid rgb(147, 150, 157);
+
+border-radius: 4px;
+</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_76">
+       <property name="geometry">
+        <rect>
+         <x>210</x>
+         <y>60</y>
+         <width>301</width>
+         <height>61</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>18</pointsize>
+         <stylestrategy>PreferAntialias</stylestrategy>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 255, 255);
+border: 3px solid rgb(147, 150, 157);
+
+border-radius: 4px;
+</string>
+       </property>
+       <property name="text">
+        <string>进行5场激烈的对局</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_77">
+       <property name="geometry">
+        <rect>
+         <x>560</x>
+         <y>250</y>
+         <width>41</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>状态：</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_78">
+       <property name="geometry">
+        <rect>
+         <x>210</x>
+         <y>230</y>
+         <width>301</width>
+         <height>61</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>18</pointsize>
+         <stylestrategy>PreferAntialias</stylestrategy>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 255, 255);
+border: 3px solid rgb(147, 150, 157);
+
+border-radius: 4px;
+</string>
+       </property>
+       <property name="text">
+        <string>游玩时长累计达到86400秒</string>
+       </property>
+      </widget>
+     </widget>
     </widget>
     <widget class="QLabel" name="label_27">
      <property name="geometry">
@@ -2361,13 +2738,65 @@ border-radius: 10px;
       <string/>
      </property>
     </widget>
+    <widget class="QPushButton" name="chessButton">
+     <property name="geometry">
+      <rect>
+       <x>460</x>
+       <y>85</y>
+       <width>81</width>
+       <height>36</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Microsoft YaHei</family>
+       <pointsize>-1</pointsize>
+       <bold>true</bold>
+       <stylestrategy>PreferAntialias</stylestrategy>
+      </font>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+position: absolute;
+width: 71px;
+height: 24px;
+top: -255px;
+left: -432px;
+
+background: rgb(99, 104, 119);
+
+
+position: absolute;
+width: 50px;
+height: 24px;
+top: -253px;
+left: -419px;
+
+
+color: rgb(255, 255, 255);
+font-family: Microsoft YaHei;
+font-size: 14px;
+font-weight: 700;
+line-height: 18px;
+letter-spacing: 0px;
+
+</string>
+     </property>
+     <property name="text">
+      <string>国际象棋</string>
+     </property>
+    </widget>
     <zorder>gobangRecordButton_2</zorder>
     <zorder>snakeRecordButton_2</zorder>
     <zorder>tzfeRecordButton_2</zorder>
-    <zorder>colorRecordButton_4</zorder>
+    <zorder>colorRecordButton_2</zorder>
     <zorder>label_26</zorder>
     <zorder>label_27</zorder>
-    <zorder>stackedWidget</zorder>
+    <zorder>achieveWidget</zorder>
+    <zorder>chessButton</zorder>
    </widget>
    <widget class="QWidget" name="Instal">
     <widget class="QPushButton" name="btnchead">
@@ -2378,6 +2807,9 @@ border-radius: 10px;
        <width>121</width>
        <height>51</height>
       </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
      </property>
      <property name="styleSheet">
       <string notr="true">
@@ -2407,6 +2839,9 @@ text-align: center;</string>
        <height>51</height>
       </rect>
      </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
      <property name="styleSheet">
       <string notr="true">
 background: rgb(147, 150, 157);
@@ -2435,6 +2870,9 @@ text-align: center;</string>
        <height>51</height>
       </rect>
      </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
      <property name="styleSheet">
       <string notr="true">
 background: rgb(147, 150, 157);
@@ -2462,6 +2900,9 @@ text-align: center;</string>
        <width>121</width>
        <height>51</height>
       </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
      </property>
      <property name="styleSheet">
       <string notr="true">
@@ -2509,9 +2950,9 @@ font-weight: 1000;
      <property name="geometry">
       <rect>
        <x>300</x>
-       <y>150</y>
+       <y>140</y>
        <width>371</width>
-       <height>31</height>
+       <height>51</height>
       </rect>
      </property>
      <property name="font">
@@ -2527,7 +2968,8 @@ border: 1px solid rgb(147, 150, 157);
 border-radius: 2px;</string>
      </property>
      <property name="text">
-      <string>更换您的个性头像以展示您的风采（需要本地文件）</string>
+      <string>更换您的个性头像以展示您的风采（需要本地文件）
+图片分辨率为111*111</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_22">

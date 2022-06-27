@@ -11,7 +11,6 @@ QWidget#WndLogin {
     height: 442px;
     top: -260px;
     left: -536px;
-    background: rgb(161, 90, 102);
 }
 
 QLabel#label {
