@@ -23,6 +23,25 @@ WndMain::~WndMain()
     delete _ui;
 }
 
+void WndMain::tuopan()
+{
+    _menu = new QMenu(this);
+    _action1 =new QAction(_menu);
+    _action1->setText("exit");
+    _menu->addAction(_action1);
+
+    _systemTray = new QSystemTrayIcon(this);
+    _systemTray->setContextMenu(_menu);
+
+    _systemTray->setIcon(QIcon(":/image/image/logo.png"));
+    _systemTray->setToolTip("MyGame");
+    disconnect(_systemTray, &QSystemTrayIcon::activated, this, &WndMain::activeTray);
+    disconnect(_action1, &QAction::triggered, this,&WndMain::exit);
+
+    connect(_systemTray, &QSystemTrayIcon::activated, this, &WndMain::activeTray);
+    connect(_action1, &QAction::triggered, this,&WndMain::exit);
+}
+
 void WndMain::on_btnGame_clicked()
 {
     _ui->MainWindow->setCurrentWidget(_ui->AllGame);
@@ -49,6 +68,7 @@ void WndMain::on_btnUser_clicked()
     _ui->nameList->addItem("五子棋");
     _ui->nameList->addItem("贪吃蛇");
     _ui->nameList->addItem("色彩达人");
+    _ui->nameList->addItem("国际象棋");
 
     Archive gobangRecord("五子棋");
     gobangRecord.readGameStorage();
@@ -58,22 +78,26 @@ void WndMain::on_btnUser_clicked()
     tzfeRecord.readGameStorage();
     Archive colorRecord("色彩达人");
     colorRecord.readGameStorage();
+    Archive chessRecord("国际象棋");
+    chessRecord.readGameStorage();
 
     _ui->numberList_2->addItem(QString::number(tzfeRecord.getNumber()));
     _ui->numberList_2->addItem(QString::number(gobangRecord.getNumber()));
     _ui->numberList_2->addItem(QString::number(snakeRecord.getNumber()));
     _ui->numberList_2->addItem(QString::number(colorRecord.getNumber()));
+    _ui->numberList_2->addItem(QString::number(chessRecord.getNumber()));
 
     _ui->scoreList_2->addItem(QString::number(tzfeRecord.getBestScore()));
     _ui->scoreList_2->addItem("-");
     _ui->scoreList_2->addItem(QString::number(snakeRecord.getBestScore()));
     _ui->scoreList_2->addItem(QString::number(colorRecord.getBestScore()));
+    _ui->scoreList_2->addItem("-");
 
     _ui->gameTimeList->addItem(QString::number(tzfeRecord.getGameTime() / 1000) + " s");
     _ui->gameTimeList->addItem(QString::number(gobangRecord.getGameTime() / 1000) + " s");
     _ui->gameTimeList->addItem(QString::number(snakeRecord.getGameTime() / 1000) + " s");
     _ui->gameTimeList->addItem(QString::number(colorRecord.getGameTime() / 1000) + " s");
-
+    _ui->gameTimeList->addItem(QString::number(chessRecord.getGameTime() / 1000) + " s");
 }
 
 void WndMain::on_btnHist_clicked()
@@ -83,19 +107,25 @@ void WndMain::on_btnHist_clicked()
 
 void WndMain::on_btnInstal_clicked()
 {
+    tuopan();
+
     _ui->MainWindow->setCurrentWidget(_ui->Instal);
 }
 
 void WndMain::on_btnDwi_clicked()
 {
     this->showMinimized();
+
+    tuopan();
+    _systemTray->show();
+
+    this->hide();
 }
 
 void WndMain::on_btnClose_clicked()
 {
     this->close();
 }
-
 
 void WndMain::contextMenuEvent(QContextMenuEvent *event)
 {
@@ -144,6 +174,18 @@ void WndMain::contextMenuEvent(QContextMenuEvent *event)
         connect(_records, &QAction::triggered, this, [=](){
             _ui->MainWindow->setCurrentWidget(_ui->History);
             showList("色彩达人");
+        });
+        connect(_achievements, &QAction::triggered, this, [=](){
+            _ui->MainWindow->setCurrentWidget(_ui->achieve);
+            _ui->achieveWidget->setCurrentWidget(_ui->colorAchieve);
+        });
+        _rightClieckMenu->exec(event->globalPos());
+    }
+    else if (_ui->comingsoom->underMouse()) {
+        connect(_openAction, &QAction::triggered, this, &WndMain::openChess);
+        connect(_records, &QAction::triggered, this, [=](){
+            _ui->MainWindow->setCurrentWidget(_ui->History);
+            showList("国际象棋");
         });
         connect(_achievements, &QAction::triggered, this, [=](){
             _ui->MainWindow->setCurrentWidget(_ui->achieve);
@@ -230,6 +272,33 @@ void WndMain::openColor()
     }
 }
 
+void WndMain::openChess()
+{
+    if (!_isOpen) {
+        GameWndStrat *gameWidget = new GameWndStrat();
+        connect(gameWidget, &GameWndStrat::windowsClose, this, [=](){
+            this->show();
+            _isOpen = false;
+        });
+        gameWidget->show();
+        this->hide();
+    }
+}
+
+void WndMain::activeTray(QSystemTrayIcon::ActivationReason reason)
+{
+    if (reason == QSystemTrayIcon::DoubleClick){
+        this->show();
+        this->showNormal();
+        delete _systemTray;
+    }
+}
+
+void WndMain::exit()
+{
+    this->hide();
+}
+
 void WndMain::initWindows()
 {
     _isOpen = false;
@@ -237,8 +306,6 @@ void WndMain::initWindows()
     _ui->headPortraitLabel->setPixmap(Archive::headPath);
 
     _ui->MainWindow->setCurrentWidget(_ui->AllGame);
-
-    _ui->achieveWidget->setCurrentWidget(_ui->tzfeAchieve);
 
     //===================================================================================
     //游戏界面按钮事件
@@ -255,9 +322,8 @@ void WndMain::initWindows()
     //color游戏按钮
     connect(_ui->color, &QPushButton::clicked, this, &WndMain::openColor);
 
-    connect(_ui->comingsoom, &QPushButton::clicked, this, [=](){
-        QMessageBox::about(this, "提示", "新游戏正在开发中，敬请期待...");
-    });
+    //chess游戏按钮
+    connect(_ui->comingsoom, &QPushButton::clicked, this, &WndMain::openChess);
 
     _rightClieckMenu = new QMenu(this);
     //设置菜单样式
@@ -296,6 +362,10 @@ void WndMain::initWindows()
     connect(_ui->colorRecordButton, &QPushButton::clicked, this, [=](){
         showList("色彩达人");
     });
+
+    connect(_ui->chessRecordButton, &QPushButton::clicked, this, [=](){
+        showList("国际象棋");
+    });
     //====================================================================================
 
     //====================================================================================
@@ -314,6 +384,10 @@ void WndMain::initWindows()
 
     connect(_ui->colorRecordButton_2, &QPushButton::clicked, this, [=](){
         _ui->achieveWidget->setCurrentWidget(_ui->colorAchieve);
+    });
+
+    connect(_ui->chessRecordButton_2, &QPushButton::clicked, this, [=](){
+        _ui->achieveWidget->setCurrentWidget(_ui->chessAchieve);
     });
     //====================================================================================
 

@@ -13,6 +13,9 @@
 #include <QDir>
 #include <QPalette>
 #include <QTimer>
+#include<QRegularExpression>
+#include<QRegularExpressionMatch>
+
 #include "wndmain.h"
 
 namespace Ui {

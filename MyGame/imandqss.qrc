@@ -59,5 +59,44 @@
         <file>image/2.png</file>
         <file>image/keep1.png</file>
         <file>game/assets/color/logo.png</file>
+        <file>game/assets/chess/0.png</file>
+        <file>game/assets/chess/1.png</file>
+        <file>game/assets/chess/140.png</file>
+        <file>game/assets/chess/141.png</file>
+        <file>game/assets/chess/142.png</file>
+        <file>game/assets/chess/143.png</file>
+        <file>game/assets/chess/144.png</file>
+        <file>game/assets/chess/145.png</file>
+        <file>game/assets/chess/146.png</file>
+        <file>game/assets/chess/147.png</file>
+        <file>game/assets/chess/150.png</file>
+        <file>game/assets/chess/151.png</file>
+        <file>game/assets/chess/160.png</file>
+        <file>game/assets/chess/161.png</file>
+        <file>game/assets/chess/170.png</file>
+        <file>game/assets/chess/171.png</file>
+        <file>game/assets/chess/180.png</file>
+        <file>game/assets/chess/190.png</file>
+        <file>game/assets/chess/240.png</file>
+        <file>game/assets/chess/241.png</file>
+        <file>game/assets/chess/242.png</file>
+        <file>game/assets/chess/243.png</file>
+        <file>game/assets/chess/244.png</file>
+        <file>game/assets/chess/245.png</file>
+        <file>game/assets/chess/246.png</file>
+        <file>game/assets/chess/247.png</file>
+        <file>game/assets/chess/250.png</file>
+        <file>game/assets/chess/251.png</file>
+        <file>game/assets/chess/260.png</file>
+        <file>game/assets/chess/261.png</file>
+        <file>game/assets/chess/270.png</file>
+        <file>game/assets/chess/271.png</file>
+        <file>game/assets/chess/280.png</file>
+        <file>game/assets/chess/290.png</file>
+        <file>game/assets/chess/bg1.jpg</file>
+        <file>game/assets/chess/bg2.jpg</file>
+        <file>game/assets/chess/checker.png</file>
+        <file>game/assets/chess/chess.png</file>
+        <file>game/assets/chess/game.png</file>
     </qresource>
 </RCC>

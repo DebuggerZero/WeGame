@@ -27,6 +27,11 @@ SOURCES += \
     game/Snake/GameView/gstartwidght.cpp \
     game/Snake/Snake.cpp \
     game/Utility/utility.cpp \
+    game/chess/GameView/gamewndplayng.cpp \
+    game/chess/GameView/gamewndstrat.cpp \
+    game/chess/chess.cpp \
+    game/chess/gamemanager.cpp \
+    game/chess/gameplayer.cpp \
     main.cpp \
     wndlogin.cpp \
     wndmain.cpp
@@ -48,6 +53,11 @@ HEADERS += \
     game/Snake/GameView/gstartwidght.h \
     game/Snake/Snake.h \
     game/Utility/utility.h \
+    game/chess/GameView/gamewndplayng.h \
+    game/chess/GameView/gamewndstrat.h \
+    game/chess/chess.h \
+    game/chess/gamemanager.h \
+    game/chess/gameplayer.h \
     wndlogin.h \
     wndmain.h
 
@@ -59,6 +69,8 @@ FORMS += \
     game/Gobang/GameView/gstartwindow.ui \
     game/Snake/GameView/gmainwidget.ui \
     game/Snake/GameView/gstartwidght.ui \
+    game/chess/GameView/gamewndplayng.ui \
+    game/chess/GameView/gamewndstrat.ui \
     wndlogin.ui \
     wndmain.ui
 

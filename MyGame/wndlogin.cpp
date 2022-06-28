@@ -20,7 +20,6 @@ WndLogin::~WndLogin()
 
 void WndLogin::Init()
 {
-
     QTimer *timer = new QTimer;
     _player = new QMediaPlayer;
     _videoWidget = new QVideoWidget();
@@ -28,8 +27,6 @@ void WndLogin::Init()
     _player->setSource(QUrl("qrc:/image/image/1000.mp4"));
     this->setCentralWidget(_videoWidget);
     _ui->verticalLayout_2->addWidget(_videoWidget);
-    //ui->verticalLayout
-    //connect(player,&QMediaPlayer::durationChanged,this,&MainWindow::getduration);
     _videoWidget->show();
     _player->play();
     connect(timer,&QTimer::timeout,this,[=](){
@@ -126,7 +123,12 @@ void WndLogin::on_btnReg__clicked()
         _ui->ePassword_->setPlaceholderText(QString("密码输入有误！"));
     }
     else {
-        if (archive.isRegister(account, user, onePass)) {
+        QRegularExpression re("^[a-zA-Z0-9_-]+@ [a-zA-Z0-9_-]+ (. [a-zA-Z0-9_-]+)+$");
+        QRegularExpressionMatch match = re.match(account);
+        bool hasMatch = match.hasMatch();
+        QRegularExpressionMatch match_ = re.match(onePass);
+        bool hasMatch_ = match_.hasMatch();
+        if (archive.isRegister(account, user, onePass)&&hasMatch&&hasMatch_) {
             QMessageBox::information(NULL,"注册成功","欢迎！！");     //警告乱码问题
             _ui->stackedWidget->setCurrentWidget(_ui->sLogin);
         }

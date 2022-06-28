@@ -29,7 +29,6 @@ GameStartWindows::GameStartWindows(QWidget *parent)
 
 GameStartWindows::~GameStartWindows()
 {
-    qDebug() << "我寄了";
     ui->StartGame->disconnect();
     ui->ExitGame->disconnect();
     emit windowsClose();

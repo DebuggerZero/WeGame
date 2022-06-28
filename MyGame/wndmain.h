@@ -8,13 +8,15 @@
 #include <QAction>
 #include <QFileDialog>
 #include <QInputDialog>
+#include <QSystemTrayIcon>
 
 #include "game/2048/GameView/gamestartwindows.h"
 #include "game/Gobang/GameView/gstartwindow.h"
 #include "game/Snake/GameView/gstartwidght.h"
 #include "game/Color/widget.h"
 #include "game/Utility/utility.h"
-#include "Archive/archive.h"
+#include "archive/archive.h"
+#include "game/chess/GameView/gamewndstrat.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class WndMain; }
@@ -30,6 +32,8 @@ public:
     void contextMenuEvent(QContextMenuEvent* event);
 
     void showList(QString gameName);
+
+    void tuopan();
     /********************************/
     ~WndMain();
 
@@ -56,6 +60,8 @@ private slots:
 
     void openColor();
 
+    void openChess();
+
 private:
     Ui::WndMain *_ui;
 
@@ -63,9 +69,18 @@ private:
 
     void initWindows();
 
+    void activeTray(QSystemTrayIcon::ActivationReason reason);
+
+    void exit();
+
+
     QMenu           *_rightClieckMenu;
     QAction         *_openAction;
     QAction         *_achievements;
     QAction         *_records;
+
+    QMenu *_menu;
+    QAction *_action1;
+    QSystemTrayIcon* _systemTray;
 };
 #endif // WNDMAIN_H

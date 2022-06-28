@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>GameWndStrat</class>
+ <widget class="QWidget" name="GameWndStrat">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>600</width>
+    <height>400</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>600</width>
+    <height>400</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../../../imandqss.qrc">
+    <normaloff>:/image/image/chess1.png</normaloff>:/image/image/chess1.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(247, 255, 250);</string>
+  </property>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>291</width>
+     <height>401</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/game/assets/chess/bg1.jpg);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnStrat">
+   <property name="geometry">
+    <rect>
+     <x>410</x>
+     <y>150</y>
+     <width>111</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+position: absolute;
+width: 461px;
+height: 178px;
+top: 1629px;
+left: -942px;
+
+
+background: rgb(50, 122, 180);
+border-radius: 48px;
+
+position: absolute;
+width: 270px;
+height: 71px;
+top: 1682px;
+left: -847px;
+
+
+color: rgb(0, 255, 179);
+
+font-size: 24px;
+font-weight: 400;
+line-height: 71px;
+letter-spacing: 0px;
+text-align: left;
+
+</string>
+   </property>
+   <property name="text">
+    <string>    strat</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnexit">
+   <property name="geometry">
+    <rect>
+     <x>410</x>
+     <y>250</y>
+     <width>111</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+position: absolute;
+width: 461px;
+height: 178px;
+top: 1629px;
+left: -942px;
+
+
+background: rgb(50, 122, 180);
+border-radius: 48px;
+
+position: absolute;
+width: 270px;
+height: 71px;
+top: 1682px;
+left: -847px;
+
+
+color: rgb(0, 255, 179);
+font-size: 24px;
+font-weight: 400;
+line-height: 71px;
+letter-spacing: 0px;
+text-align: left;
+
+</string>
+   </property>
+   <property name="text">
+    <string>     exit</string>
+   </property>
+  </widget>
+ </widget>
+ <resources>
+  <include location="../../../imandqss.qrc"/>
+ </resources>
+ <connections/>
+</ui>
