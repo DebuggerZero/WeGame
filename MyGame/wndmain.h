@@ -27,10 +27,6 @@ class WndMain : public QWidget
 public:
     WndMain(QWidget *parent = nullptr);
     /****************************/
-    QMenu *m_rightClieckMenu;
-    QAction *m_openAction;
-    QAction *View_achievements;
-    QAction *View_records;
     void contextMenuEvent(QContextMenuEvent* event);
 
     void showList(QString gameName);
@@ -66,5 +62,10 @@ private:
     bool _isOpen;
 
     void initWindows();
+
+    QMenu           *_rightClieckMenu;
+    QAction         *_openAction;
+    QAction         *_achievements;
+    QAction         *_records;
 };
 #endif // WNDMAIN_H

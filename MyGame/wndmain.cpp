@@ -99,57 +99,57 @@ void WndMain::on_btnClose_clicked()
 
 void WndMain::contextMenuEvent(QContextMenuEvent *event)
 {
-    m_openAction->disconnect();
-    View_records->disconnect();
-    View_achievements->disconnect();
+    _openAction->disconnect();
+    _records->disconnect();
+    _achievements->disconnect();
 
     if (_ui->TZFE->underMouse()) {
-        connect(m_openAction, &QAction::triggered, this, &WndMain::openTZFE);
-        connect(View_records, &QAction::triggered, this, [=](){
+        connect(_openAction, &QAction::triggered, this, &WndMain::openTZFE);
+        connect(_records, &QAction::triggered, this, [=](){
             _ui->MainWindow->setCurrentWidget(_ui->History);
             showList("2048");
         });
-        connect(View_achievements, &QAction::triggered, this, [=](){
+        connect(_achievements, &QAction::triggered, this, [=](){
             _ui->MainWindow->setCurrentWidget(_ui->achieve);
             _ui->achieveWidget->setCurrentWidget(_ui->tzfeAchieve);
         });
-        m_rightClieckMenu->exec(event->globalPos());
+        _rightClieckMenu->exec(event->globalPos());
     }
     else if (_ui->Snake->underMouse()) {
-        connect(m_openAction, &QAction::triggered, this, &WndMain::openSnake);
-        connect(View_records, &QAction::triggered, this, [=](){
+        connect(_openAction, &QAction::triggered, this, &WndMain::openSnake);
+        connect(_records, &QAction::triggered, this, [=](){
             _ui->MainWindow->setCurrentWidget(_ui->History);
             showList("贪吃蛇");
         });
-        connect(View_achievements, &QAction::triggered, this, [=](){
+        connect(_achievements, &QAction::triggered, this, [=](){
             _ui->MainWindow->setCurrentWidget(_ui->achieve);
             _ui->achieveWidget->setCurrentWidget(_ui->snakeAchieve);
         });
-        m_rightClieckMenu->exec(event->globalPos());
+        _rightClieckMenu->exec(event->globalPos());
     }
     else if (_ui->Gobang->underMouse()) {
-        connect(m_openAction, &QAction::triggered, this, &WndMain::openGobang);
-        connect(View_records, &QAction::triggered, this, [=](){
+        connect(_openAction, &QAction::triggered, this, &WndMain::openGobang);
+        connect(_records, &QAction::triggered, this, [=](){
             _ui->MainWindow->setCurrentWidget(_ui->History);
             showList("五子棋");
         });
-        connect(View_achievements, &QAction::triggered, this, [=](){
+        connect(_achievements, &QAction::triggered, this, [=](){
             _ui->MainWindow->setCurrentWidget(_ui->achieve);
             _ui->achieveWidget->setCurrentWidget(_ui->gobangAchieve);
         });
-        m_rightClieckMenu->exec(event->globalPos());
+        _rightClieckMenu->exec(event->globalPos());
     }
     else if (_ui->color->underMouse()) {
-        connect(m_openAction, &QAction::triggered, this, &WndMain::openColor);
-        connect(View_records, &QAction::triggered, this, [=](){
+        connect(_openAction, &QAction::triggered, this, &WndMain::openColor);
+        connect(_records, &QAction::triggered, this, [=](){
             _ui->MainWindow->setCurrentWidget(_ui->History);
             showList("色彩达人");
         });
-        connect(View_achievements, &QAction::triggered, this, [=](){
+        connect(_achievements, &QAction::triggered, this, [=](){
             _ui->MainWindow->setCurrentWidget(_ui->achieve);
             _ui->achieveWidget->setCurrentWidget(_ui->colorAchieve);
         });
-        m_rightClieckMenu->exec(event->globalPos());
+        _rightClieckMenu->exec(event->globalPos());
     }
 }
 
@@ -238,6 +238,8 @@ void WndMain::initWindows()
 
     _ui->MainWindow->setCurrentWidget(_ui->AllGame);
 
+    _ui->achieveWidget->setCurrentWidget(_ui->tzfeAchieve);
+
     //===================================================================================
     //游戏界面按钮事件
 
@@ -257,22 +259,22 @@ void WndMain::initWindows()
         QMessageBox::about(this, "提示", "新游戏正在开发中，敬请期待...");
     });
 
-    m_rightClieckMenu = new QMenu(this);
+    _rightClieckMenu = new QMenu(this);
     //设置菜单样式
     /**************************************/
     //创建菜单项
-    m_openAction = new QAction("打开",this);
-    View_achievements = new QAction("查看成就",this);
-    View_records = new QAction("查看记录",this);
+    _openAction = new QAction("打开",this);
+    _achievements = new QAction("查看成就",this);
+    _records = new QAction("查看记录",this);
 
     //将创建好的菜单项加入到菜单中
-    m_rightClieckMenu->addAction(m_openAction);
-    m_rightClieckMenu->addAction(View_achievements);
-    m_rightClieckMenu->addAction(View_records);
+    _rightClieckMenu->addAction(_openAction);
+    _rightClieckMenu->addAction(_achievements);
+    _rightClieckMenu->addAction(_records);
 
-    m_openAction->setIcon(QIcon(":/image/image/gameIcon.png"));
-    View_achievements->setIcon(QIcon(":/image/image/achiIcon.png"));
-    View_records->setIcon(QIcon(":/image/image/histIcon.png"));
+    _openAction->setIcon(QIcon(":/image/image/gameIcon.png"));
+    _achievements->setIcon(QIcon(":/image/image/achiIcon.png"));
+    _records->setIcon(QIcon(":/image/image/histIcon.png"));
     //关联菜单项按钮和对应的槽函数
     //====================================================================================
 
